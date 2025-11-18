@@ -1,0 +1,4 @@
+pydantic
+typing
+requests
+pydantic_settings
