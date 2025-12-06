@@ -18,14 +18,13 @@ class WorksSearchRequest(BaseModel):
         None,
         description="End publication date in YYYY-MM-DD format."
     )
-    per_page: int = Field(
-        20,
-        description="Number of results per page (max 200).",
-    )
 
+    
 class WorkSummary(BaseModel):
     id: str
-    display_name: str
+    title: str
+    keywords: str
+    abstract: str
     publication_year: Optional[int]
     authorships: List[Dict]
 

@@ -2,3 +2,5 @@ pydantic
 typing
 requests
 pydantic_settings
+fastapi
+uvicorn
