@@ -26,7 +26,6 @@ class WorkSummary(BaseModel):
     keywords: str
     abstract: str
     publication_year: Optional[int]
-    authorships: List[Dict]
 
 class WorksSearchResponse(BaseModel):
     results: List[WorkSummary]

@@ -2,6 +2,7 @@
 from fastapi import APIRouter, Depends, HTTPException
 from ..schemas import WorksSearchRequest, WorksSearchResponse
 from ..services.works_service import run_search
+from ..services.semantic_rerank_service import rerank_works_by_query
 from ...data.client import OpenAlexClient, OpenAlexError
 
 router = APIRouter()
@@ -13,5 +14,13 @@ def get_client():
 def search_works(payload: WorksSearchRequest, client: OpenAlexClient = Depends(get_client)):
     try:
         return run_search(payload, client)
+    except OpenAlexError as exc:
+        raise HTTPException(status_code=502, detail=str(exc))
+
+@router.post("/rerank_search", response_model=WorksSearchResponse)
+def search_and_rerank(payload: WorksSearchRequest, client: OpenAlexClient = Depends(get_client)):
+    try:
+        response = run_search(payload, client)
+        return rerank_works_by_query(searchRequest=payload, workList=response)
     except OpenAlexError as exc:
         raise HTTPException(status_code=502, detail=str(exc))
