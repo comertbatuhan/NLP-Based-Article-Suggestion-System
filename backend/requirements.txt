@@ -1,0 +1,7 @@
+pydantic
+typing
+requests
+pydantic_settings
+fastapi
+uvicorn
+sentence_transformers
