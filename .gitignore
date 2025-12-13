@@ -7,3 +7,4 @@ backend/__pycache__/
 backend/scripts/
 request_api.txt
 meeting.txt 
+*.ipynb

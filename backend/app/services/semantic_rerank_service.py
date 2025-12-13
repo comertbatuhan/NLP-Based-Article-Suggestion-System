@@ -1,19 +1,20 @@
 # backend/app/services/semantic_rerank_service.py
 from functools import lru_cache
 from typing import List, Dict
+import numpy as np
 
 from sentence_transformers import SentenceTransformer, util, CrossEncoder
 
 from ..schemas import WorksSearchResponse, WorksSearchRequest
- 
-
-"""@lru_cache(maxsize=1)
-def get_model() -> SentenceTransformer:
-    # Load once per process
-    return SentenceTransformer("sentence-transformers/all-MiniLM-L6-v2")"""
 
 @lru_cache(maxsize=1)
-def get_model():
+def get_sentence_transformer() -> SentenceTransformer:
+    # Load once per process
+    return SentenceTransformer("sentence-transformers/all-MiniLM-L6-v2")
+
+@lru_cache(maxsize=1)
+def get_cross_encoder():
+    # Load once per process
     return CrossEncoder('cross-encoder/ms-marco-MiniLM-L-6-v2')
 
 def build_search_space_representation(workList: WorksSearchResponse) -> Dict:
@@ -37,18 +38,18 @@ def build_query_space_representation(searchRequest: WorksSearchRequest) -> List[
     return query_space
 
 
-"""def rerank_works_by_query(searchRequest: WorksSearchRequest, workList: WorksSearchResponse) -> WorksSearchResponse:
+def rerank_works_by_query_sentence_transformer(searchRequest: WorksSearchRequest, workList: WorksSearchResponse) -> WorksSearchResponse:
 
     search_space = build_search_space_representation(workList) #Dict
     query_space = build_query_space_representation(searchRequest) #List[str]
 
-    model = get_model()
+    model = get_sentence_transformer()
     query_emb = model.encode(query_space, convert_to_tensor=True) #dim: abstract_num x embed_dim
 
     search_space_list = [item for item in search_space.values()]
     search_emb = model.encode(search_space_list, convert_to_tensor=True) #dim: #_of_results_from_openalex x embed_dim
 
-    scores = util.cos_sim(query_emb, search_emb).max(dim=0).values  # shape: (_of_results_from_openalex,)
+    scores = util.cos_sim(query_emb, search_emb).mean(dim=0)  # shape: (# of_results_from_openalex,)
 
     work_ids = list(search_space.keys())
     work_lookup = {work.id: work for work in workList.results}
@@ -60,44 +61,35 @@ def build_query_space_representation(searchRequest: WorksSearchRequest) -> List[
         if work_id in work_lookup
     ]
 
-    return WorksSearchResponse(results=sorted_results)"""
+    return WorksSearchResponse(results=sorted_results)
 
-def rerank_works_by_query(searchRequest: WorksSearchRequest, workList: WorksSearchResponse) -> WorksSearchResponse:
-    model = get_model()
+def rerank_works_by_query_cross_encoder(searchRequest: WorksSearchRequest, workList: WorksSearchResponse) -> WorksSearchResponse:
+    model = get_cross_encoder()
 
-    # 1. Prepare the Query String
-    # (Using your fallback logic from before)
     query_str = " ".join(k.strip().lower() for k in searchRequest.keywords)
     if searchRequest.abstracts:
-         # If you have abstracts in the request, you might concatenate them, 
-         # but usually, the query should be short and specific. 
-         # Let's assume the query is the keywords for best results.
-         pass 
+        query_pairs = [query_str + " " + abstract.strip().lower() for abstract in searchRequest.abstracts]
 
-    # 2. Prepare Pairs: [(Query, Doc1), (Query, Doc2), ...]
-    # We compare the Query against the Abstract (or Title + Abstract) of the work.
+    len_query_pairs = len(query_pairs)
     ranking_pairs = []
     work_ids_ordered = []
 
     for work in workList.results:
-        # Construct the document text. 
-        # TIP: Title is often more important than abstract. Put it first.
         doc_text = f"{work.title} {work.abstract}".strip()
-        
-        ranking_pairs.append([query_str, doc_text])
+        for query in query_pairs:
+            ranking_pairs.append([query, doc_text])
         work_ids_ordered.append(work.id)
 
     if not ranking_pairs:
         return workList
 
-    # 3. Predict Scores
-    # The model returns an array of scores, e.g., [4.5, -1.2, 0.8...]
     scores = model.predict(ranking_pairs)
-
-    # 4. Sort and Reconstruct
+    scores_final = []
+    i=0
+    while i<len_query_pairs:
+        scores_final.append(np.mean(scores[i:i+len_query_pairs]))
+        i+=len_query_pairs
     work_lookup = {work.id: work for work in workList.results}
-    
-    # Zip IDs with scores
     scored_works = sorted(zip(work_ids_ordered, scores), key=lambda x: x[1], reverse=True)
 
     sorted_results = [
