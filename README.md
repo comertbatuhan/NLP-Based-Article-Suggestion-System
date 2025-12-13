@@ -5,7 +5,7 @@
 ![University](https://img.shields.io/badge/University-Boğaziçi_University-purple)
 ![Python](https://img.shields.io/badge/Python-3.9%2B-yellow)
 
-> **Note:** This project is currently **under active development**. Architecture and logic are subject to change as research progresses. Please check the develop branch to observe the process.
+> **Note:** This project is currently **under active development**. Architecture and logic are subject to change as research progresses.
 
 ## 📖 About The Project
 
