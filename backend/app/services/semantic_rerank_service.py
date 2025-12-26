@@ -6,16 +6,17 @@ import numpy as np
 from sentence_transformers import SentenceTransformer, util, CrossEncoder
 
 from ..schemas import WorksSearchResponse, WorksSearchRequest
+from ..cache import get_cache_dir
 
 @lru_cache(maxsize=1)
 def get_sentence_transformer() -> SentenceTransformer:
     # Load once per process
-    return SentenceTransformer("sentence-transformers/all-MiniLM-L6-v2")
+    return SentenceTransformer("sentence-transformers/all-MiniLM-L6-v2", cache_folder=get_cache_dir())
 
 @lru_cache(maxsize=1)
 def get_cross_encoder():
     # Load once per process
-    return CrossEncoder('cross-encoder/ms-marco-MiniLM-L-6-v2')
+    return CrossEncoder('cross-encoder/ms-marco-MiniLM-L-6-v2', cache_folder=get_cache_dir())
 
 def build_search_space_representation(workList: WorksSearchResponse) -> Dict:
     search_space ={}
