@@ -69,7 +69,8 @@ def rerank_works_by_query_cross_encoder(searchRequest: WorksSearchRequest, workL
     query_str = " ".join(k.strip().lower() for k in searchRequest.keywords)
     if searchRequest.abstracts:
         query_pairs = [query_str + " " + abstract.strip().lower() for abstract in searchRequest.abstracts]
-
+    else:
+        query_pairs = [query_str]
     len_query_pairs = len(query_pairs)
     ranking_pairs = []
     work_ids_ordered = []

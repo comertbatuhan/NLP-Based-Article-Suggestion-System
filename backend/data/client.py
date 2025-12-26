@@ -9,6 +9,15 @@ from requests.adapters import HTTPAdapter, Retry
 
 from .config import settings
 
+import logging
+logger = logging.getLogger("openalex")
+# Ensure info-level OpenAlex requests are visible without extra config
+if not logger.handlers:
+    handler = logging.StreamHandler()
+    formatter = logging.Formatter("[%(levelname)s] %(message)s")
+    handler.setFormatter(formatter)
+    logger.addHandler(handler)
+logger.setLevel(logging.INFO)
 
 class OpenAlexError(RuntimeError):
     pass
@@ -65,8 +74,8 @@ class OpenAlexClient:
                     params["per-page"] = min(200, max(1, v))
             except Exception:
                 params["per-page"] = settings.per_page
-
         url = self._url(path)
+        logger.info("OpenAlex GET %s params=%s", url, params)
         resp = self.session.get(url, params=params, timeout=self.timeout_s)
 
         # Manual handling for 429 after retries exhausted: brief sleep + one last try
@@ -76,6 +85,13 @@ class OpenAlexClient:
             resp = self.session.get(url, params=params, timeout=self.timeout_s)
 
         if not resp.ok:
+            logger.error(
+                "OpenAlex error %s for %s with params %s: %s",
+                resp.status_code,
+                url,
+                params,
+                resp.text[:500],
+            )
             raise OpenAlexError(
                 f"OpenAlex error {resp.status_code} for {url} with params {params}:\n{resp.text[:500]}"
             )

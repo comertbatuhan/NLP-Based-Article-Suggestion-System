@@ -1,14 +1,30 @@
 # data/fetch.py
 from __future__ import annotations
 
+import re
+import unicodedata
 from typing import Dict, Iterable, List, Optional
 
 from .client import OpenAlexClient
 
 
 # --------- helpers ------------------------------------------------------
+def _sanitize_term(s: str) -> str:
+    if not s:
+        return ""
+
+    normalized = unicodedata.normalize("NFKD", s)
+    ascii_only = normalized.encode("ascii", "ignore").decode("ascii")
+    ascii_only = ascii_only.replace(",", " ")
+
+    cleaned = re.sub(r"[^A-Za-z0-9.\-\s]", " ", ascii_only)
+    cleaned = re.sub(r"\s+", " ", cleaned).strip()
+
+    return cleaned
+
+
 def _quote(s: str) -> str:
-    s = s.strip().replace('"', r"\"")
+    s = _sanitize_term(s).replace('"', r"\"")
     return f"\"{s}\"" if s else ""
 
 

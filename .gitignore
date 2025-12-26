@@ -1,10 +1,16 @@
-backend/test.ipynb
+# Python
 __pycache__/
-backend/__pycache__/
-.vscode/
+*.py[cod]
+.venv/
 .env
 .env.*
-backend/scripts/
-request_api.txt
-meeting.txt 
-*.ipynb
+
+# Node/Vite
+node_modules/
+dist/
+*.log
+
+# IDE/OS
+.vscode/
+.idea/
+.DS_Store
