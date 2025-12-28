@@ -6,16 +6,17 @@ import numpy as np
 from sentence_transformers import SentenceTransformer, util, CrossEncoder
 
 from ..schemas import WorksSearchResponse, WorksSearchRequest
+from ..cache import get_cache_dir
 
 @lru_cache(maxsize=1)
 def get_sentence_transformer() -> SentenceTransformer:
     # Load once per process
-    return SentenceTransformer("sentence-transformers/all-MiniLM-L6-v2")
+    return SentenceTransformer("sentence-transformers/all-MiniLM-L6-v2", cache_folder=get_cache_dir())
 
 @lru_cache(maxsize=1)
 def get_cross_encoder():
     # Load once per process
-    return CrossEncoder('cross-encoder/ms-marco-MiniLM-L-6-v2')
+    return CrossEncoder('cross-encoder/ms-marco-MiniLM-L-6-v2', cache_folder=get_cache_dir())
 
 def build_search_space_representation(workList: WorksSearchResponse) -> Dict:
     search_space ={}
@@ -69,7 +70,8 @@ def rerank_works_by_query_cross_encoder(searchRequest: WorksSearchRequest, workL
     query_str = " ".join(k.strip().lower() for k in searchRequest.keywords)
     if searchRequest.abstracts:
         query_pairs = [query_str + " " + abstract.strip().lower() for abstract in searchRequest.abstracts]
-
+    else:
+        query_pairs = [query_str]
     len_query_pairs = len(query_pairs)
     ranking_pairs = []
     work_ids_ordered = []
@@ -86,11 +88,11 @@ def rerank_works_by_query_cross_encoder(searchRequest: WorksSearchRequest, workL
     scores = model.predict(ranking_pairs)
     scores_final = []
     i=0
-    while i<len_query_pairs:
+    while i<len(scores):
         scores_final.append(np.mean(scores[i:i+len_query_pairs]))
         i+=len_query_pairs
     work_lookup = {work.id: work for work in workList.results}
-    scored_works = sorted(zip(work_ids_ordered, scores), key=lambda x: x[1], reverse=True)
+    scored_works = sorted(zip(work_ids_ordered, scores_final), key=lambda x: x[1], reverse=True)
 
     sorted_results = [
         work_lookup[work_id] 
