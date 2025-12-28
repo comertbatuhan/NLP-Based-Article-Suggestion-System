@@ -9,7 +9,7 @@
 
 ## 📖 About The Project
 
-This repository hosts the implementation of a semantic search and reranking engine designed to improve information retrieval for academic literature. Unlike traditional keyword-based search, this system utilizes **Vector Space Models** and **Cross-Encoders** to understand the contextual relationship between a user's query and scientific abstracts.
+This repository hosts the implementation of a search via OpenAlex API and reranking engine designed to improve information retrieval for academic literature. Unlike traditional keyword-based search, this system utilizes **Vector Space Models** and **Cross-Encoders** to understand the contextual relationship between a user's query and scientific works.
 
 The core objective is to mitigate the "vocabulary mismatch problem" in specific domains (e.g., Molecular Communication, Nanonetworking) by leveraging state-of-the-art NLP techniques.
 
@@ -21,7 +21,7 @@ This work is being developed as the **Graduation Project** for the **Master of S
 
 ---
 
-## 🏗 Architecture & Logic
+## Architecture & Logic
 
 The system follows a two-stage retrieval process:
 
@@ -29,9 +29,8 @@ The system follows a two-stage retrieval process:
 2.  **Reranking (Deep Search):** Re-orders the candidate set by calculating the semantic similarity between the query and the work's title/abstract.
 
 ### Key Features
-* **Semantic Reranking:** utilizes `sentence-transformers` (switching between Bi-Encoders and Cross-Encoders) to score relevance.
-* **Abstract Handling:** Intelligent parsing of abstracts to generate query spaces.
-* **Hybrid Search Fallback:** Robust logic to handle cases where abstracts are missing, falling back to keyword-based vectorization.
+* **Semantic Reranking:** utilizes `sentence-transformers` (Bi-Encoders and Cross-Encoders) to score relevance.
+* **Abstract Handling:** Intelligent parsing of keywords/abstracts to generate query and search spaces.
 * **Pydantic Integration:** Strongly typed data validation for Requests and Responses.
 
 ---
@@ -47,14 +46,14 @@ The system follows a two-stage retrieval process:
 
 ---
 
-## 🚀 Current Progress & Roadmap
+## Current Progress & Roadmap
 
 As this is an ongoing academic project, the following modules are currently in development or refinement:
 
 - [x] **Basic Retrieval Pipeline:** Fetching works and parsing metadata.
 - [x] **Bi-Encoder Implementation:** Cosine similarity calculation using embedding vectors.
 - [x] **Cross-Encoder Upgrade:** Moving to `ms-marco` for higher accuracy on small candidate sets.
-- [ ] **Evaluation Metrics:** Implementing nDCG and MAP to benchmark reranking performance.
+- [x] **Evaluation Metrics:** Implementing nDCG and MAP to benchmark reranking performance.
 - [x] **API Layer:** Exposing the reranker via FastAPI endpoints.
 
 ---

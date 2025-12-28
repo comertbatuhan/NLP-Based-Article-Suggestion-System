@@ -14,3 +14,5 @@ dist/
 .vscode/
 .idea/
 .DS_Store
+
+rerank_results.csv

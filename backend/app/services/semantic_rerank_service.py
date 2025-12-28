@@ -88,11 +88,11 @@ def rerank_works_by_query_cross_encoder(searchRequest: WorksSearchRequest, workL
     scores = model.predict(ranking_pairs)
     scores_final = []
     i=0
-    while i<len_query_pairs:
+    while i<len(scores):
         scores_final.append(np.mean(scores[i:i+len_query_pairs]))
         i+=len_query_pairs
     work_lookup = {work.id: work for work in workList.results}
-    scored_works = sorted(zip(work_ids_ordered, scores), key=lambda x: x[1], reverse=True)
+    scored_works = sorted(zip(work_ids_ordered, scores_final), key=lambda x: x[1], reverse=True)
 
     sorted_results = [
         work_lookup[work_id] 

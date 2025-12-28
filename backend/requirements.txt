@@ -5,3 +5,5 @@ pydantic_settings
 fastapi
 uvicorn
 sentence_transformers
+pytest
+httpx

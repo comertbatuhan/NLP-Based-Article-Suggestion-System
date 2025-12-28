@@ -1,0 +1,514 @@
+1. Channel Modeling and Capacity Analysis for Electromagnetic Wireless Nanonetworks in the Terahertz Band
+Query: MC + Nanonet + Channel Modeling (7)
+Year: 2011  |  DOI: https://doi.org/10.1109/twc.2011.081011.100545  |  Venue: None
+Authors: Josep Miquel Jornet, Ian F. Akyildiz
+Abstract:
+Nanotechnologies promise new solutions for several applications in the biomedical, industrial and military fields. At the nanoscale, a nanomachine is considered as the most basic functional unit which is able to perform very simple tasks. Communication among nanomachines will allow them to accomplish more complex functions in a distributed manner. In this paper, the state of the art in molecular electronics is reviewed to motivate the study of the Terahertz Band (0.1-10.0 THz) for electromagnetic (EM) communication among nano-devices. A new propagation model for EM communications in the Terahertz Band is developed based on radiative transfer theory and in light of molecular absorption. This model accounts for the total path loss and the molecular absorption noise that a wave in the Terahertz Band suffers when propagating over very short distances. Finally, the channel capacity of the Terahertz Band is investigated by using this model for different power allocation schemes, including a scheme based on the transmission of femtosecond-long pulses. The results show that for very short transmission distances, in the order of several tens of millimeters, the Terahertz channel supports very large bit-rates, up to few terabits per second, which enables a radically different communication paradigm for nanonetworks.
+Keywords: Terahertz radiation, Terahertz gap, Channel (broadcasting), Transmission (telecommunications), Path loss, Wireless, Computer science, Electronics, Molecular absorption, Molecular communication, Telecommunications, Electronic engineering, Noise (video), Physics, Optoelectronics, Electrical engineering, Terahertz metamaterials, Optics, Engineering, Transmitter
+Topics: Molecular Communication and Nanonetworks, Energy Harvesting in Wireless Networks, Advanced biosensing and bioanalysis techniques
+Concepts: Terahertz radiation, Terahertz gap, Channel (broadcasting), Transmission (telecommunications), Path loss, Wireless, Computer science, Electronics, Molecular absorption, Molecular communication, Telecommunications, Electronic engineering, Noise (video), Physics, Optoelectronics, Electrical engineering, Terahertz metamaterials, Optics, Engineering, Transmitter, Image (mathematics), Astronomy, Spectral line, Artificial intelligence, Laser, Far-infrared laser
+Label: Terrahertz, channel modeling, path-loss, energy harvesting
+Note: @@@ energy harvesting biraz farklı 
+
+-----------------------------------------------------------
+2. A physical end-to-end model for molecular communication in nanonetworks
+Query: MC + Nanonet + Channel Modeling (7)
+Year: 2010  |  DOI: https://doi.org/10.1109/jsac.2010.100509  |  Venue: None
+Authors: Massimiliano Pierobon, Ian F. Akyildiz
+Abstract:
+Molecular communication is a promising paradigm for nanoscale networks. The end-to-end (including the channel) models developed for classical wireless communication networks need to undergo a profound revision so that they can be applied for nanonetworks. Consequently, there is a need to develop new end-to-end (including the channel) models which can give new insights into the design of these nanoscale networks. The objective of this paper is to introduce a new physical end-to-end (including the channel) model for molecular communication. The new model is investigated by means of three modules, i.e., the transmitter, the signal propagation and the receiver. Each module is related to a specific process involving particle exchanges, namely, particle emission, particle diffusion and particle reception. The particle emission process involves the increase or decrease of the particle concentration rate in the environment according to a modulating input signal. The particle diffusion provides the propagation of particles from the transmitter to the receiver by means of the physics laws underlying particle diffusion in the space. The particle reception process is identified by the sensing of the particle concentration value at the receiver location. Numerical results are provided for three modules, as well as for the overall end-to-end model, in terms of normalized gain and delay as functions of the input frequency and of the transmission range.
+Keywords: Molecular communication, Transmitter, Channel (broadcasting), Computer science, Particle (ecology), Transmission (telecommunications), Diffusion, Process (computing), Electronic engineering, Telecommunications, Topology (electrical circuits), Electrical engineering, Physics, Engineering
+Topics: Molecular Communication and Nanonetworks, Wireless Body Area Networks, Energy Harvesting in Wireless Networks
+Concepts: Molecular communication, Transmitter, Channel (broadcasting), Computer science, Particle (ecology), Transmission (telecommunications), Diffusion, Process (computing), Electronic engineering, Telecommunications, Topology (electrical circuits), Electrical engineering, Physics, Engineering, Operating system, Oceanography, Geology, Thermodynamics
+
+Label: molecular communication, diffusion, observing receiver, channel modeling
+Note:
+
+3. Femtosecond-Long Pulse-Based Modulation for Terahertz Band Communication in Nanonetworks
+Query: MC + Nanonet + Channel Modeling (7)
+Year: 2014  |  DOI: https://doi.org/10.1109/tcomm.2014.033014.130403  |  Venue: None
+Authors: Josep Miquel Jornet, Ian F. Akyildiz
+Abstract:
+Nanonetworks consist of nano-sized communicating devices which are able to perform simple tasks at the nanoscale. Nanonetworks are the enabling technology of long-awaited applications such as advanced health monitoring systems or high-performance distributed nano-computing architectures. The peculiarities of novel plasmonic nano-transceivers and nano-antennas, which operate in the Terahertz Band (0.1-10 THz), require the development of tailored communication schemes for nanonetworks. In this paper, a modulation and channel access scheme for nanonetworks in the Terahertz Band is developed. The proposed technique is based on the transmission of one-hundred-femtosecond-long pulses by following an asymmetric On-Off Keying modulation Spread in Time (TS-OOK). The performance of TS-OOK is evaluated in terms of the achievable information rate in the single-user and the multi-user cases. An accurate Terahertz Band channel model, validated by COMSOL simulation, is used, and novel stochastic models for the molecular absorption noise in the Terahertz Band and for the multi-user interference in TS-OOK are developed. The results show that the proposed modulation can support a very large number of nano-devices simultaneously transmitting at multiple Gigabits-per-second and up to Terabits-per-second, depending on the modulation parameters and the network conditions.
+Keywords: Terahertz radiation, Transceiver, Modulation (music), Computer science, Electronic engineering, Transmission (telecommunications), Pulse-position modulation, Channel (broadcasting), Femtosecond, Interference (communication), On-off keying, Optoelectronics, Telecommunications, Physics, Wireless, Quadrature amplitude modulation, Pulse (music), Pulse-amplitude modulation, Bit error rate, Laser, Optics, Engineering
+Topics: Molecular Communication and Nanonetworks, Plasmonic and Surface Plasmon Research, Energy Harvesting in Wireless Networks
+Concepts: Terahertz radiation, Transceiver, Modulation (music), Computer science, Electronic engineering, Transmission (telecommunications), Pulse-position modulation, Channel (broadcasting), Femtosecond, Interference (communication), On-off keying, Optoelectronics, Telecommunications, Physics, Wireless, Quadrature amplitude modulation, Pulse (music), Pulse-amplitude modulation, Bit error rate, Laser, Optics, Engineering, Acoustics, Detector
+Label: Terrahertz, modulation, channel modeling, energy harvesting
+Note:
+
+------------------------------------------------------------
+4. Frequency and Time Domain Channel Models for Nanonetworks in Terahertz Band
+Query: MC + Nanonet + Channel Modeling (7)
+Year: 2014  |  DOI: https://doi.org/10.1109/tap.2014.2373371  |  Venue: None
+Authors: Joonas Kokkoniemi, Janne Lehtomäki, Kenta Umebayashi, Markku Juntti
+Abstract:
+Time and frequency domain channel models are proposed for nanonetworks utilizing the terahertz band (0.1-10 THz) for wireless communication. Nanonetworks are formed by tiny nanodevices which consist of nanoscale (molecular scale) components. Channel models capturing the unique peculiarities of the THz band are needed for designing proper physical layer techniques and for accurate performance analysis. Existing channel models have included the free space path loss and the molecular absorption loss, which is significant in the THz band. This paper theoretically analyzes scattering including multiple scattering referring to a sequence of scattering events from small particles, such as aerosols. Both the frequency and the impulse responses are derived. It is shown that the small particle scattering can result into significant additional loss that needs to be taken into account with the loss depending on the density and size distribution of the particles. It is shown that multiple scattering leads to a long tail in the impulse response. As most of the physical layer proposals for nanonetworks are based on the on-off keying, the channel response to pulse waveforms is specifically considered.
+Keywords: Scattering, Terahertz radiation, Path loss, Impulse response, Channel (broadcasting), Impulse (physics), Frequency domain, Wireless, Frequency band, Time domain, Physics, Computer science, Electronic engineering, Telecommunications, Computational physics, Optics, Bandwidth (computing), Engineering
+Topics: Molecular Communication and Nanonetworks, Millimeter-Wave Propagation and Modeling, Terahertz technology and applications
+Concepts: Scattering, Terahertz radiation, Path loss, Impulse response, Channel (broadcasting), Impulse (physics), Frequency domain, Wireless, Frequency band, Time domain, Physics, Computer science, Electronic engineering, Telecommunications, Computational physics, Optics, Bandwidth (computing), Engineering, Quantum mechanics, Mathematics, Mathematical analysis, Computer vision
+
+Label: Terrahertz, channel modeling, scattering, path-loss
+Note:
+
+
+------------------------------------------------------------
+5. A Physical Channel Model for Nanoscale Neuro-Spike Communications
+Query: MC + Nanonet + Channel Modeling (7)
+Year: 2013  |  DOI: https://doi.org/10.1109/tcomm.2012.010213.110093  |  Venue: None
+Authors: Eren Balevi, Özgür B. Akan
+Abstract:
+Nanoscale communications is an appealing domain in nanotechnology. Novel nanoscale communications techniques are currently being devised inspired by some naturally existing phenomena such as the molecular communications governing cellular signaling mechanisms. Among these, neuro-spike communications, which governs the communications between neurons, is a vastly unexplored area. The ultimate goal of this paper is to accurately investigate nanoscale neuro-spike communications characteristics through the development of a realistic physical channel model between two neurons. The neuro-spike communications channel is analyzed based on the probability of error and delay in spike detection at the output. The derived communication theoretical channel model may help designing novel artificial nanoscale communications methods for the realization of future practical nanonetworks, which are the interconnections of nanomachines.
+Keywords: Spike (software development), Molecular communication, Channel (broadcasting), Computer science, Realization (probability), Communications system, Nanoscopic scale, Electronic engineering, Telecommunications, Engineering, Nanotechnology, Materials science
+Topics: Molecular Communication and Nanonetworks, Wireless Body Area Networks, Neuroscience and Neural Engineering
+Concepts: Spike (software development), Molecular communication, Channel (broadcasting), Computer science, Realization (probability), Communications system, Nanoscopic scale, Electronic engineering, Telecommunications, Engineering, Nanotechnology, Materials science, Transmitter, Mathematics, Software engineering, Statistics
+
+Label: molecular communication, neurons, channel modeling
+Note:
+
+
+
+
+
+
+------------------------------------------------------------
+6. Channel Capacity of Electromagnetic Nanonetworks in the Terahertz Band
+Query: MC + Nanonet + Channel Modeling (7)
+Year: 2010  |  DOI: https://doi.org/10.1109/icc.2010.5501885  |  Venue: None
+Authors: Josep Miquel Jornet, Ian F. Akyildiz
+Abstract:
+Nanotechnology is enabling the development of devices in a scale ranging from one to a few hundred nanometers. Coordination and information sharing among these nano-devices will lead towards the development of future nanonetworks, rising new applications of nanotechnology in the medical, environmental and military fields. Despite the major progress in nano-device design and fabrication, it is still not clear how these atomically precise machines will communicate. The latest advancements in graphene- based electronics have opened the door to electromagnetic communication among nano-devices in the terahertz band (0.1-10 THz). This frequency band can potentially provide very large bandwidths, ranging from the entire band to several gigahertz- wide windows, depending on the transmission distance and the molecular composition of the channel. In this paper, the capacity of the terahertz channel is numerically evaluated by using a new terahertz propagation model, for different channel molecular compositions, and under different power allocation schemes. A novel communication technique based on the transmission of ultra-short pulses, less than one picosecond long, is motivated and quantitatively compared to the capacity- optimal power allocation scheme. The results show that for the very short range, up to a few tens of millimeters, the transmission of short pulses offer a realistic and still efficient way to exploit the terahertz channel.
+Keywords: Terahertz radiation, Channel (broadcasting), Transmission (telecommunications), Ranging, Electronics, Computer science, Picosecond, Channel capacity, Exploit, Fabrication, Optoelectronics, Materials science, Electronic engineering, Telecommunications, Nanotechnology, Electrical engineering, Physics, Engineering, Laser, Optics
+Topics: Molecular Communication and Nanonetworks, Terahertz technology and applications, Millimeter-Wave Propagation and Modeling
+Concepts: Terahertz radiation, Channel (broadcasting), Transmission (telecommunications), Ranging, Electronics, Computer science, Picosecond, Channel capacity, Exploit, Fabrication, Optoelectronics, Materials science, Electronic engineering, Telecommunications, Nanotechnology, Electrical engineering, Physics, Engineering, Laser, Optics, Alternative medicine, Computer security, Medicine, Pathology
+Label: Terrahertz, channel modeling, signal propagation, channel capacity
+Note:
+
+
+------------------------------------------------------------
+7. Diffusion-based channel characterization in molecular nanonetworks
+Query: MC + Nanonet + Channel Modeling (7)
+Year: 2011  |  DOI: https://doi.org/10.1109/infcomw.2011.5928858  |  Venue: None
+Authors: Ignacio Llátser, Eduard Alarcón, Massimiliano Pierobony
+Abstract:
+Nanotechnology is enabling the development of devices in a scale ranging from one to a few hundred nanometers, known as nanomachines. How these nanomachines will communicate is still an open debate. Molecular communication is a promising paradigm that has been proposed to implement nanonetworks, i.e., the interconnection of nanomachines. Recent studies have attempted to model the physical channel of molecular communication, mainly from a communication or information-theoretical point of view. In this work, we focus on the diffusion-based molecular communication, whose physical channel is governed by Fick's laws of diffusion. We characterize the molecular channel following two complementary approaches: first, we obtain the channel impulse response, transfer function and group delay; second, we propose a pulse-based modulation scheme and we obtain analytical expressions for the most relevant performance evaluation metrics, which we also validate by simulation. Finally, we compare the scalability of these metrics with their equivalents in a wireless electromagnetic channel. We consider that these results provide interesting insights which may serve designers as a guide to implement future molecular nanonetworks.
+Keywords: Molecular communication, Scalability, Computer science, Channel (broadcasting), Diffusion, Interconnection, Impulse (physics), Characterization (materials science), Wireless, Modulation (music), Electronic engineering, Transmitter, Nanotechnology, Telecommunications, Physics, Materials science, Engineering
+Topics: Molecular Communication and Nanonetworks, Advanced biosensing and bioanalysis techniques, Wireless Body Area Networks
+Concepts: Molecular communication, Scalability, Computer science, Channel (broadcasting), Diffusion, Interconnection, Impulse (physics), Characterization (materials science), Wireless, Modulation (music), Electronic engineering, Transmitter, Nanotechnology, Telecommunications, Physics, Materials science, Engineering, Quantum mechanics, Acoustics, Database, Thermodynamics
+
+Label: channel model
+Note:
+
+
+
+-----------------------------------------------------------
+8. Robust Modulation Technique for Diffusion-based Molecular Communication in Nanonetworks
+Query: MC + Nanonet + Modulation (7)
+Year: 2014  |  DOI: https://doi.org/10.48550/arxiv.1401.3938  |  Venue: None
+Authors: Subodh Pudasaini, Seokjoo Shin, Kyung Sup Kwak
+Abstract:
+Diffusion-based molecular communication over nanonetworks is an emerging communication paradigm that enables nanomachines to communicate by using molecules as the information carrier. For such a communication paradigm, Concentration Shift Keying (CSK) has been considered as one of the most promising techniques for modulating information symbols, owing to its inherent simplicity and practicality. CSK modulated subsequent information symbols, however, may interfere with each other due to the random amount of time that molecules of each modulated symbols take to reach the receiver nanomachine. To alleviate Inter Symbol Interference (ISI) problem associated with CSK, we propose a new modulation technique called Zebra-CSK. The proposed Zebra-CSK adds inhibitor molecules in CSK-modulated molecular signal to selectively suppress ISI causing molecules. Numerical results from our newly developed probabilistic analytical model show that Zebra-CSK not only enhances capacity of the molecular channel but also reduces symbol error probability observed at the receiver nanomachine.
+Keywords: Molecular communication, Modulation (music), Computer science, Channel (broadcasting), Keying, Interference (communication), Probabilistic logic, SIGNAL (programming language), Diffusion, Electronic engineering, Topology (electrical circuits), Theoretical computer science, Telecommunications, Physics, Mathematics, Transmitter, Artificial intelligence, Engineering, Acoustics
+Topics: Molecular Communication and Nanonetworks, Advanced biosensing and bioanalysis techniques, Wireless Body Area Networks
+Concepts: Molecular communication, Modulation (music), Computer science, Channel (broadcasting), Keying, Interference (communication), Probabilistic logic, SIGNAL (programming language), Diffusion, Electronic engineering, Topology (electrical circuits), Theoretical computer science, Telecommunications, Physics, Mathematics, Transmitter, Artificial intelligence, Engineering, Acoustics, Programming language, Thermodynamics, Combinatorics
+
+Label: molecular communication, diffusion, modulation, inter-symbol-interference (ISI)
+Note:
+
+
+
+------------------------------------------------------------
+9. Evaluation of digital baseband modulation schemes for molecular communication in nanonetworks
+Query: MC + Nanonet + Modulation (7)
+Year: 2014  |  DOI: https://doi.org/10.1109/icufn.2014.6876800  |  Venue: None
+Authors: Lin Lin, Cheng-Feng Yang, Jiandong Wang, Shiwei Ma
+Abstract:
+Molecular communications and nanonetworks become a popular and promising research direction recently. It uses molecules as the carrier to transmit information between nanomachines. Since the molecular communication is a novel communication paradigm, the communication principles and theories of it need to be re-considered and re-evaluated. In this paper, we describe four digital baseband modulation schemes for molecular communication systems, which modulate digital signals into the concentration of molecules. These modulation methods, including unipolar, polar, bipolar and Manchester methods, are investigated. The influences of the parameters such as symbol rate, distance, diffusion coefficient, are evaluated. The numerical results reveal that Manchester modulation scheme outperforms others in terms of bit error rate.
+Keywords: Molecular communication, Baseband, Modulation (music), Computer science, Bit error rate, Electronic engineering, Communications system, Telecommunications, Bandwidth (computing), Physics, Engineering, Transmitter
+Topics: Molecular Communication and Nanonetworks, Wireless Body Area Networks, Energy Harvesting in Wireless Networks
+Concepts: Molecular communication, Baseband, Modulation (music), Computer science, Bit error rate, Electronic engineering, Communications system, Telecommunications, Bandwidth (computing), Physics, Engineering, Transmitter, Channel (broadcasting), Acoustics
+
+Label: molecular communication, modulation, baseband
+Note:
+
+
+
+
+
+
+
+10. Femtosecond-Long Pulse-Based Modulation for Terahertz Band Communication in Nanonetworks
+Query: MC + Nanonet + Modulation (7)
+Year: 2014  |  DOI: https://doi.org/10.1109/tcomm.2014.033014.130403  |  Venue: None
+Authors: Josep Miquel Jornet, Ian F. Akyildiz
+Abstract:
+Nanonetworks consist of nano-sized communicating devices which are able to perform simple tasks at the nanoscale. Nanonetworks are the enabling technology of long-awaited applications such as advanced health monitoring systems or high-performance distributed nano-computing architectures. The peculiarities of novel plasmonic nano-transceivers and nano-antennas, which operate in the Terahertz Band (0.1-10 THz), require the development of tailored communication schemes for nanonetworks. In this paper, a modulation and channel access scheme for nanonetworks in the Terahertz Band is developed. The proposed technique is based on the transmission of one-hundred-femtosecond-long pulses by following an asymmetric On-Off Keying modulation Spread in Time (TS-OOK). The performance of TS-OOK is evaluated in terms of the achievable information rate in the single-user and the multi-user cases. An accurate Terahertz Band channel model, validated by COMSOL simulation, is used, and novel stochastic models for the molecular absorption noise in the Terahertz Band and for the multi-user interference in TS-OOK are developed. The results show that the proposed modulation can support a very large number of nano-devices simultaneously transmitting at multiple Gigabits-per-second and up to Terabits-per-second, depending on the modulation parameters and the network conditions.
+Keywords: Terahertz radiation, Transceiver, Modulation (music), Computer science, Electronic engineering, Transmission (telecommunications), Pulse-position modulation, Channel (broadcasting), Femtosecond, Interference (communication), On-off keying, Optoelectronics, Telecommunications, Physics, Wireless, Quadrature amplitude modulation, Pulse (music), Pulse-amplitude modulation, Bit error rate, Laser, Optics, Engineering
+Topics: Molecular Communication and Nanonetworks, Plasmonic and Surface Plasmon Research, Energy Harvesting in Wireless Networks
+Concepts: Terahertz radiation, Transceiver, Modulation (music), Computer science, Electronic engineering, Transmission (telecommunications), Pulse-position modulation, Channel (broadcasting), Femtosecond, Interference (communication), On-off keying, Optoelectronics, Telecommunications, Physics, Wireless, Quadrature amplitude modulation, Pulse (music), Pulse-amplitude modulation, Bit error rate, Laser, Optics, Engineering, Acoustics, Detector
+Label: Terrahertz, modulation, channel modeling
+Note:
+
+
+------------------------------------------------------------
+11. Detection Techniques for Diffusion-based Molecular Communication
+Query: MC + Nanonet + Modulation (7)
+Year: 2013  |  DOI: https://doi.org/10.1109/jsac.2013.sup2.1213005  |  Venue: None
+Authors: Ignacio Llátser, Albert Cabellos‐Aparicio, Massimiliano Pierobon, Eduard Alarcón
+Abstract:
+Nanonetworks, the interconnection of nanosystems, are envisaged to greatly expand the applications of nanotechnology in the biomedical, environmental and industrial fields. However, it is still not clear how these nanosystems will communicate among them. This work considers a scenario of Diffusion-based Molecular Communication (DMC), a promising paradigm that has been recently proposed to implement nanonetworks. In a DMC network, transmitters encode information by the emission of molecules which diffuse throughout the medium, eventually reaching the receiver locations. In this scenario, a pulse-based modulation scheme is proposed and two techniques for the detection of the molecular pulses, namely, amplitude detection and energy detection, are compared. In order to evaluate the performance of DMC using both detection schemes, the most important communication metrics in each case are identified. Their analytical expressions are obtained and validated by simulation. Finally, the scalability of the obtained performance evaluation metrics in both detection techniques is compared in order to determine their suitability to particular DMC scenarios. Energy detection is found to be more suitable when the transmission distance constitutes a bottleneck in the performance of the network, whereas amplitude detection will allow achieving a higher transmission rate in the cases where the transmission distance is not a limitation. These results provide interesting insights which may serve designers as a guide to implement future DMC networks.
+Keywords: Molecular communication, Computer science, Bottleneck, Scalability, Transmission (telecommunications), Interconnection, Energy (signal processing), Telecommunications, Transmitter, Embedded system, Channel (broadcasting), Physics
+Topics: Molecular Communication and Nanonetworks, Advanced biosensing and bioanalysis techniques, Wireless Body Area Networks
+Concepts: Molecular communication, Computer science, Bottleneck, Scalability, Transmission (telecommunications), Interconnection, Energy (signal processing), Telecommunications, Transmitter, Embedded system, Channel (broadcasting), Physics, Database, Quantum mechanics
+
+Label: molecular communication, modulation, signal detection
+Note:
+
+
+------------------------------------------------------------
+12. Diffusion-Based Nanonetworking: A New Modulation Technique and Performance Analysis
+Query: MC + Nanonet + Modulation (7)
+Year: 2013  |  DOI: https://doi.org/10.1109/lcomm.2013.021913.122402  |  Venue: None
+Authors: Hamidreza Arjmandi, Amin Gohari, Masoumeh Nasiri Kenari, Farshid Bateni
+Abstract:
+Abstract—In this letter, we propose a new molecular modula-tion scheme for nanonetworks. To evaluate the scheme we intro-duce a more realistic system model for molecule dissemination and propagation processes based on the Poisson distribution. We derive the probability of error of our proposed scheme as well as the previously introduced schemes, including concentration and molecular shift keying modulations by taking into account the error propagation effect of previously decoded symbols. Since in our scheme the decoding of the current symbol does not depend on the previously transmitted and decoded symbols, we do not encounter error propagation; and so as our numerical results indicate, the proposed scheme outperforms the previously introduced schemes. We then introduce a general molecular communication system and use information theoretic tools to derive fundamental limits on its probability of error.
+Keywords: Decoding methods, Computer science, Modulation (music), Algorithm, Keying, Encoder, Poisson distribution, Propagation of uncertainty, Molecular communication, Scheme (mathematics), Set (abstract data type), Theoretical computer science, Mathematics, Telecommunications, Statistics, Channel (broadcasting), Physics
+Topics: Molecular Communication and Nanonetworks, Advanced biosensing and bioanalysis techniques, Energy Harvesting in Wireless Networks
+Concepts: Decoding methods, Computer science, Modulation (music), Algorithm, Keying, Encoder, Poisson distribution, Propagation of uncertainty, Molecular communication, Scheme (mathematics), Set (abstract data type), Theoretical computer science, Mathematics, Telecommunications, Statistics, Channel (broadcasting), Physics, Programming language, Acoustics, Transmitter, Mathematical analysis, Operating system
+
+Label: Molecular communication, modulation, signal detection
+Note:
+
+
+
+
+
+
+
+------------------------------------------------------------
+13. D-MoSK Modulation in Molecular Communications
+Query: MC + Nanonet + Modulation (7)
+Year: 2015  |  DOI: https://doi.org/10.1109/tnb.2015.2436409  |  Venue: None
+Authors: Md. Humaun Kabir, S. M. Riazul Islam, Kyung Sup Kwak
+Abstract:
+Molecular communication in nanonetworks is an emerging communication paradigm that uses molecules as information carriers. In molecule shift keying (MoSK), where different types of molecules are used for encoding, transmitter and receiver complexities increase as the modulation order increases. We propose a modulation technique called depleted MoSK (D-MoSK) in which, molecules are released if the information bit is 1 and no molecule is released for 0. The proposed scheme enjoys reduced number of the types of molecules for encoding. Numerical results show that the achievable rate is considerably higher and symbol error rate (SER) performance is better in the proposed technique.
+Keywords: Molecular communication, Modulation (music), Encoding (memory), Transmitter, Computer science, Keying, Bit error rate, Phase-shift keying, Molecule, Electronic engineering, Topology (electrical circuits), Telecommunications, Physics, Theoretical computer science, Decoding methods, Electrical engineering, Channel (broadcasting), Engineering, Quantum mechanics, Artificial intelligence
+Topics: Molecular Communication and Nanonetworks, Advanced biosensing and bioanalysis techniques, Wireless Body Area Networks
+Concepts: Molecular communication, Modulation (music), Encoding (memory), Transmitter, Computer science, Keying, Bit error rate, Phase-shift keying, Molecule, Electronic engineering, Topology (electrical circuits), Telecommunications, Physics, Theoretical computer science, Decoding methods, Electrical engineering, Channel (broadcasting), Engineering, Quantum mechanics, Artificial intelligence, Acoustics
+
+Label: Molecular communication, modulation, error rate, achievable rate
+Note:
+
+
+
+
+
+
+
+
+
+------------------------------------------------------------
+14. Diffusion-based channel characterization in molecular nanonetworks
+Query: MC + Nanonet + Modulation (7)
+Year: 2011  |  DOI: https://doi.org/10.1109/infcomw.2011.5928858  |  Venue: None
+Authors: Ignacio Llátser, Eduard Alarcón, Massimiliano Pierobony
+Abstract:
+Nanotechnology is enabling the development of devices in a scale ranging from one to a few hundred nanometers, known as nanomachines. How these nanomachines will communicate is still an open debate. Molecular communication is a promising paradigm that has been proposed to implement nanonetworks, i.e., the interconnection of nanomachines. Recent studies have attempted to model the physical channel of molecular communication, mainly from a communication or information-theoretical point of view. In this work, we focus on the diffusion-based molecular communication, whose physical channel is governed by Fick's laws of diffusion. We characterize the molecular channel following two complementary approaches: first, we obtain the channel impulse response, transfer function and group delay; second, we propose a pulse-based modulation scheme and we obtain analytical expressions for the most relevant performance evaluation metrics, which we also validate by simulation. Finally, we compare the scalability of these metrics with their equivalents in a wireless electromagnetic channel. We consider that these results provide interesting insights which may serve designers as a guide to implement future molecular nanonetworks.
+Keywords: Molecular communication, Scalability, Computer science, Channel (broadcasting), Diffusion, Interconnection, Impulse (physics), Characterization (materials science), Wireless, Modulation (music), Electronic engineering, Transmitter, Nanotechnology, Telecommunications, Physics, Materials science, Engineering
+Topics: Molecular Communication and Nanonetworks, Advanced biosensing and bioanalysis techniques, Wireless Body Area Networks
+Concepts: Molecular communication, Scalability, Computer science, Channel (broadcasting), Diffusion, Interconnection, Impulse (physics), Characterization (materials science), Wireless, Modulation (music), Electronic engineering, Transmitter, Nanotechnology, Telecommunications, Physics, Materials science, Engineering, Quantum mechanics, Acoustics, Database, Thermodynamics
+
+Label: molecular communication, channel modeling, modulation, 
+Note:
+
+
+
+------------------------------------------------------------
+15. Bio-Inspired Synchronization for Nanocommunication Networks
+Query: MC + Nanonet + Synchronization (6)
+Year: 2011  |  DOI: https://doi.org/10.1109/glocom.2011.6133931  |  Venue: None
+Authors: Sergi Abadal, Ian F. Akyildiz
+Abstract:
+Nanonetworks are networks of devices inherently working and communicating at a scale ranging between one and hundreds of nanometers. The motivation behind these nanonetworks is to enhance the complexity and range of operation of the system, as the nanomachines that will be part of these networks have significant limitations in terms of size and power consumption. Neither classical communication schemes nor protocols used in conventional networks are valid in this new scenario. For instance, synchronization between nodes is a feature commonly required to build a network architecture. In this paper, we propose Quorum Sensing as a valid tool to achieve synchronization in a cluster of nodes of a nanonetwork by means of molecular communication, and in a distributed manner. Quorum Sensing is a mechanism by which bacteria coordinate their behavior, based on the emission and reception of molecules called autoinducers. The authors present the communication aspects of this natural phenomenon, as well as some simulation results that show the performance of Quorum Sensing-enabled entities. As a conclusion, some possible applications are outlined.
+Keywords: Computer science, Synchronization (alternating current), Distributed computing, Autoinducer, Ranging, Molecular communication, Architecture, Computer network, Quorum sensing, Telecommunications, Transmitter, Channel (broadcasting)
+Topics: Molecular Communication and Nanonetworks, Photoreceptor and optogenetics research, Gene Regulatory Network Analysis
+Concepts: Computer science, Synchronization (alternating current), Distributed computing, Autoinducer, Ranging, Molecular communication, Architecture, Computer network, Quorum sensing, Telecommunications, Transmitter, Channel (broadcasting), Biofilm, Biology, Genetics, Bacteria, Art, Visual arts
+
+Label: Molecular communication, synchronization, 
+Note:
+
+
+
+
+
+
+
+------------------------------------------------------------
+16. Diffusion-Based Clock Synchronization for Molecular Communication Under Inverse Gaussian Distribution
+Query: MC + Nanonet + Synchronization (6)
+Year: 2015  |  DOI: https://doi.org/10.1109/jsen.2015.2429673  |  Venue: None
+Authors: Lin Lin, Cheng-Feng Yang, Maode Ma, Shiwei Ma
+Abstract:
+Nanonetworks are expected to expand the capabilities of individual nanomachines by allowing them to cooperate and share information by molecular communication. The information molecules are released by the transmitter nanomachine and diffuse across the aqueous channel as a Brownian motion holding the feature of a strong random movement with a large propagation delay. In order to ensure an effective real-time cooperation, it is necessary to keep the clock synchronized among the nanomachines in the nanonetwork. This paper proposes a model on a two-way message exchange mechanism with the molecular propagation delay based on the inverse Gaussian distribution. The clock offset and clock skew are estimated by the maximum likelihood estimation (MLE). Simulation results by MATLAB show that the mean square errors (MSE) of the estimated clock offsets and clock skews can be reduced and converge with a number of rounds of message exchanges. The comparison of the proposed scheme with a clock synchronization method based on symmetrical propagation delay demonstrates that our proposed scheme can achieve a better performance in terms of accuracy.
+Keywords: Molecular communication, Clock skew, Computer science, Clock synchronization, Synchronization (alternating current), Clock drift, Propagation delay, Transmitter, Skew, Offset (computer science), Gaussian, Channel (broadcasting), Real-time computing, Electronic engineering, Topology (electrical circuits), Algorithm, Telecommunications, Computer network, Engineering, Physics, Clock signal, Electrical engineering, Jitter
+Topics: Molecular Communication and Nanonetworks, Wireless Body Area Networks, Neuroscience and Neural Engineering
+Concepts: Molecular communication, Clock skew, Computer science, Clock synchronization, Synchronization (alternating current), Clock drift, Propagation delay, Transmitter, Skew, Offset (computer science), Gaussian, Channel (broadcasting), Real-time computing, Electronic engineering, Topology (electrical circuits), Algorithm, Telecommunications, Computer network, Engineering, Physics, Clock signal, Electrical engineering, Jitter, Quantum mechanics, Programming language
+Label: Molecular communication, synchronization, estimating clock skew
+Note:
+
+
+------------------------------------------------------------
+17. Networking challenges and principles in diffusion-based molecular communication
+Query: MC + Nanonet + Synchronization (6)
+Year: 2012  |  DOI: https://doi.org/10.1109/mwc.2012.6339470  |  Venue: None
+Authors: Ignacio Llátser, Albert Cabellos‐Aparicio, Eduard Alarcón
+Abstract:
+Nanotechnology has allowed building nanomachines capable of performing simple tasks, such as sensing, data storage, and actuation. Nanonetworks, networks of nanomachines, will allow cooperation and information sharing among them, thereby greatly expanding the applications of nanotechnology in the biomedical, environmental,and industrial fields. One of the most promising paradigms to implement nanonetworks is diffusion-based molecular communication (DMC). In DMC, nanomachines transmit information by the emission of molecules that diffuse throughout the medium until they reach their destination. Most of the existing literature in DMC has focused on the analysis of its physical channel. In this work, the key differences of the&#13;\nphysical channel of DMC with respect to the&#13;\nwireless electromagnetic channel are reviewed&#13;\nwith the purpose of learning how they impact the design of networks using DMC. In particular, we find that the uniqueness of the physical channel of DMC will require revisiting most of the protocols and techniques developed for traditional&#13;\nwireless networks in order to adapt them to DMC networks. Furthermore, guidelines for the design of a novel network architecture for DMC networks, including fundamental aspects such as coding, medium access control, addressing, routing and synchronization, are provided.
+Keywords: Molecular communication, Computer science, Channel (broadcasting), Computer network, Wireless, Synchronization (alternating current), Distributed computing, Telecommunications, Transmitter
+Topics: Molecular Communication and Nanonetworks, Wireless Body Area Networks, Energy Harvesting in Wireless Networks
+Concepts: Molecular communication, Computer science, Channel (broadcasting), Computer network, Wireless, Synchronization (alternating current), Distributed computing, Telecommunications, Transmitter
+
+Label: molecular communication, synchronization,
+Note:
+
+
+
+
+
+-----------------------------------------------------------
+18. Quorum Sensing-enabled amplification for molecular nanonetworks
+Query: MC + Nanonet + Synchronization (6)
+Year: 2012  |  DOI: https://doi.org/10.1109/icc.2012.6364691  |  Venue: None
+Authors: Sergi Abadal, Ignacio Llátser, Eduard Alarcón, Albert Cabellos‐Aparicio
+Abstract:
+Nanotechnology is enabling the development of devices in a scale ranging from a few to hundreds of nanometers. The nanonetworks that result from interconnecting these devices greatly expand the possible applications, by increasing the complexity and range of operation of the system. Molecular communication is regarded as a promising way to realize this interconnection in a bio-compatible and energy efficient manner, enabling its use in biomedical applications. However, the transmission range of molecular signals is strongly limited due to the large and inherent losses of the diffusion process. In this paper, we propose the employment of Quorum Sensing so as to achieve cooperative amplification of a given signal. By means of Quorum Sensing, we aim to synchronize the course of action of a certain number of emitters, which will transmit the same signal. Under the assumption of a linear channel, such signal will be amplified and thus the transmission range will be consequently extended. Finally, we validate our proposal through simulation.
+Keywords: Computer science, Transmission (telecommunications), Molecular communication, Interconnection, SIGNAL (programming language), Ranging, Channel (broadcasting), Quorum sensing, Process (computing), Electronic engineering, Range (aeronautics), Distributed computing, Telecommunications, Engineering, Aerospace engineering
+Topics: Molecular Communication and Nanonetworks, Advanced biosensing and bioanalysis techniques, Energy Harvesting in Wireless Networks
+Concepts: Computer science, Transmission (telecommunications), Molecular communication, Interconnection, SIGNAL (programming language), Ranging, Channel (broadcasting), Quorum sensing, Process (computing), Electronic engineering, Range (aeronautics), Distributed computing, Telecommunications, Engineering, Aerospace engineering, Transmitter, Biofilm, Programming language, Biology, Operating system, Genetics, Bacteria
+
+Label: Molecular Communication, synchronization
+Note:
+
+
+
+
+
+------------------------------------------------------------
+19. Evaluation of Molecular Oscillation for Nanonetworks Based on Quorum Sensing
+Query: MC + Nanonet + Synchronization (6)
+Year: 2015  |  DOI: https://doi.org/10.1109/nanofim.2015.8425336  |  Venue: None
+Authors: Feiyan Li, Lin Lin, Cheng-Feng Yang, Maode Ma
+Abstract:
+Bio-inspired molecular communication is a novel kind of communication technology, which uses biochemical molecules as the information carrier. Single nanomachine has limited ability to accomplish targeted goals, so a nanonetwork, which is composed of interconnected nanomachines, is expected. To perform cooperative operations in a nanonetwork, the synchronization among nanomachines is essential. With this purpose, we propose a simple quorum-sensing-based oscillation model. By using the proposed methodology, the instantaneous emission of molecules in quorum sensing is modeled and evaluated. The self-excited oscillation can occur when the molecular concentration decreases below a certain threshold. Analysis and simulations are performed to determine how the biological attributes of the nanomachines, the threshold, the distance between nanomachines and the dimension of the simulation space impact the periods and the phases of the oscillation.
+Keywords: Molecular communication, Oscillation (cell signaling), Quorum sensing, Computer science, Synchronization (alternating current), Dimension (graph theory), Biological system, Distributed computing, Telecommunications, Biology, Mathematics
+Topics: Molecular Communication and Nanonetworks, Gene Regulatory Network Analysis, Photoreceptor and optogenetics research
+Concepts: Molecular communication, Oscillation (cell signaling), Quorum sensing, Computer science, Synchronization (alternating current), Dimension (graph theory), Biological system, Distributed computing, Telecommunications, Biology, Mathematics, Bacteria, Pure mathematics, Transmitter, Biofilm, Channel (broadcasting), Genetics
+
+Label: Molecular communication, synchronization
+Note:
+
+
+
+
+
+
+
+------------------------------------------------------------
+20. Tabletop Molecular Communication: Text Messages through Chemical Signals
+Query: MC + Nanonet + Synchronization (6)
+Year: 2013  |  DOI: https://doi.org/10.1371/journal.pone.0082935  |  Venue: None
+Authors: Nariman Farsad, Weisi Guo, Andrew W. Eckford
+Abstract:
+In this work, we describe the first modular, and programmable platform capable of transmitting a text message using chemical signalling - a method also known as molecular communication. This form of communication is attractive for applications where conventional wireless systems perform poorly, from nanotechnology to urban health monitoring. Using examples, we demonstrate the use of our platform as a testbed for molecular communication, and illustrate the features of these communication systems using experiments. By providing a simple and inexpensive means of performing experiments, our system fills an important gap in the molecular communication literature, where much current work is done in simulation with simplified system models. A key finding in this paper is that these systems are often nonlinear in practice, whereas current simulations and analysis often assume that the system is linear. However, as we show in this work, despite the nonlinearity, reliable communication is still possible. Furthermore, this work motivates future studies on more realistic modelling, analysis, and design of theoretical models and algorithms for these systems.
+Keywords: Molecular communication, Testbed, Computer science, Communications system, Modular design, Key (lock), Wireless, Nonlinear system, Work (physics), Distributed computing, Simple (philosophy), Human–computer interaction, Telecommunications, Computer network, Engineering, Channel (broadcasting), Physics, Transmitter
+Topics: Molecular Communication and Nanonetworks, Wireless Body Area Networks, Advanced biosensing and bioanalysis techniques
+Concepts: Molecular communication, Testbed, Computer science, Communications system, Modular design, Key (lock), Wireless, Nonlinear system, Work (physics), Distributed computing, Simple (philosophy), Human–computer interaction, Telecommunications, Computer network, Engineering, Channel (broadcasting), Physics, Transmitter, Philosophy, Mechanical engineering, Epistemology, Quantum mechanics, Computer security, Operating system
+
+Label: molecular communication, testbed, channel model   
+Note: @@@(ENTERESAN QUERY SONUCU KÖTÜ - Synchronization değil bu !!!! )
+
+
+------------------------------------------------------------
+21. Power management for wireless sensor networks based on energy budgets
+Query: WSN + Energy Budget (10)
+Year: 2010  |  DOI: https://doi.org/10.15480/882.1011  |  Venue: None
+Authors: Christian Renner, Stefan Unterschütz, Volker Turau
+Abstract:
+This paper proposes and assesses analytical tools for large-scale monitoring applications with wireless sensor networks powered by energy-harvesting supplies. We introduce the concept of an energy budget, the amount of energy available to a sensor node for a given period of time. The presented tools can be utilized to realize distributed algorithms that determine a schedule to perform the monitoring task and the inherent communication. Scheduling is based on the energy budgets of the nodes or on latency requirements. In this context, we derive theoretical results for the energy consumption of the individual nodes plus the latency of event-reporting. These results are verified by simulations and a real testbed implementation.
+Keywords: Testbed, Wireless sensor network, Computer science, Energy consumption, Key distribution in wireless sensor networks, Scheduling (production processes), Schedule, Latency (audio), Real-time computing, Wireless, Computer network, Distributed computing, Energy (signal processing), Sensor node, Wireless network, Engineering, Telecommunications, Electrical engineering, Operating system
+Topics: Energy Efficient Wireless Sensor Networks, Energy Harvesting in Wireless Networks, Opportunistic and Delay-Tolerant Networks
+Concepts: Testbed, Wireless sensor network, Computer science, Energy consumption, Key distribution in wireless sensor networks, Scheduling (production processes), Schedule, Latency (audio), Real-time computing, Wireless, Computer network, Distributed computing, Energy (signal processing), Sensor node, Wireless network, Engineering, Telecommunications, Electrical engineering, Operating system, Mathematics, Operations management, Statistics
+
+Label: WSN, energy budget, latency, testbed, energy harvesting
+Note:
+
+
+
+
+
+
+
+
+------------------------------------------------------------
+22. Adaptive Approximate Data Collection for Wireless Sensor Networks
+Query: WSN + Energy Budget (10)
+Year: 2011  |  DOI: https://doi.org/10.1109/tpds.2011.265  |  Venue: None
+Authors: Chao Wang, Huadóng Ma, Yuan He, Shuguang Xiong
+Abstract:
+Data collection is a fundamental task in wireless sensor networks. In many applications of wireless sensor networks, approximate data collection is a wise choice due to the constraints in communication bandwidth and energy budget. In this paper, we focus on efficient approximate data collection with prespecified error bounds in wireless sensor networks. The key idea of our data collection approach ADC (Approximate Data Collection) is to divide a sensor network into clusters, discover local data correlations on each cluster head, and perform global approximate data collection on the sink node according to model parameters uploaded by cluster heads. Specifically, we propose a local estimation model to approximate the readings of sensor nodes in subsets, and prove rated error-bounds of data collection using this model. In the process of model-based data collection, we formulate the problem of selecting the minimum subset of sensor nodes into a minimum dominating set problem which is known to be NP-hard, and propose a greedy heuristic algorithm to find an approximate solution. We further propose a monitoring algorithm to adaptively adjust the composition of node subsets according to changes of sensor readings. Our trace-driven simulations demonstrate that ADC remarkably reduces communication cost of data collection with guaranteed error bounds.
+Keywords: Wireless sensor network, Computer science, Data collection, Key distribution in wireless sensor networks, Sensor node, Greedy algorithm, Node (physics), Approximation algorithm, Wireless, Wireless network, Distributed computing, Algorithm, Computer network, Mathematics
+Topics: Energy Efficient Wireless Sensor Networks, Distributed Sensor Networks and Detection Algorithms, Mobile Ad Hoc Networks
+Concepts: Wireless sensor network, Computer science, Data collection, Key distribution in wireless sensor networks, Sensor node, Greedy algorithm, Node (physics), Approximation algorithm, Wireless, Wireless network, Distributed computing, Algorithm, Computer network, Mathematics, Structural engineering, Statistics, Telecommunications, Engineering
+
+Label: WSN, data collection, energy budget, cluster
+Note:
+
+
+
+------------------------------------------------------------
+23. Benefits of Wake-Up Radio in Energy-Efficient Multimodal Surveillance Wireless Sensor Network
+Query: WSN + Energy Budget (10)
+Year: 2014  |  DOI: https://doi.org/10.1109/jsen.2014.2326799  |  Venue: None
+Authors: Vana Jeličić, Michele Magno, Davide Brunelli, Vedran Bilas, Luca Benini
+Abstract:
+Scarce energy budget of battery-powered wireless&#13;\nsensor nodes calls for cautious power management not to&#13;\ncompromise performance of the system. To reduce both energy&#13;\nconsumption and delay in energy-hungry wireless sensor networks&#13;\nfor latency-restricted surveillance scenarios, this paper&#13;\nproposes a multimodal two-tier architecture with wake-up radio&#13;\nreceivers. In video surveillance applications, using information&#13;\nfrom distributed low-power pyroelectric infrared (PIR) sensors&#13;\nwhich detect human presence limits the activity of cameras and&#13;\nreduces their energy consumption. PIR sensors transmit the&#13;\ninformation about the event to camera nodes using wake-up radio&#13;\nreceivers. We show the benefits of wake-up receivers over dutycycling&#13;\nin terms of overcoming energy consumption vs. latency&#13;\ntrade-off (proved with two orders of magnitude lower latency&#13;\n– only 9 ms). At the same time, the power consumption of the&#13;\ncamera node including a wake-up receiver is comparable with&#13;\nthe one having only duty-cycled main transceiver with 1% duty&#13;\ncycle (about 32 mW for 25 activations per hour).
+Keywords: Wireless sensor network, Energy consumption, Real-time computing, Computer science, Latency (audio), Wireless, Duty cycle, Computer network, Sensor node, Key distribution in wireless sensor networks, Wake, Transceiver, Embedded system, Wireless network, Telecommunications, Engineering, Electrical engineering, Voltage
+Topics: Energy Efficient Wireless Sensor Networks, Energy Harvesting in Wireless Networks, IoT-based Smart Home Systems
+Concepts: Wireless sensor network, Energy consumption, Real-time computing, Computer science, Latency (audio), Wireless, Duty cycle, Computer network, Sensor node, Key distribution in wireless sensor networks, Wake, Transceiver, Embedded system, Wireless network, Telecommunications, Engineering, Electrical engineering, Voltage, Aerospace engineering
+
+Label: WSN, energy budget, duty-cycle, latency, energy harvesting
+Note:
+
+
+------------------------------------------------------------
+24. Spatiotemporal relations between water budget components and soil water content in a forested tributary catchment
+Query: WSN + Energy Budget (10)
+Year: 2014  |  DOI: https://doi.org/10.1002/2013wr014516  |  Venue: None
+Authors: Alexander Graf, Heye Bogena, Clemens Drüe, H. Hardelauf, Thomas Pütz, Günther Heinemann, Harry Vereecken
+Abstract:
+Abstract We examined 3 years of measured daily values of all major water budget components (precipitation P , potential evapotranspiration PET , actual evapotranspiration ET , and runoff R ) and volumetric soil water content θ of a small, forested catchment located in the west of Germany. The spatial distribution of θ was determined from a wireless sensor network of 109 points with 3 measurement depths each; ET was calculated from eddy‐covariance tower measurements. The water budget was dominantly energy limited, with ET amounting to approximately 90% of PET , and a runoff ratio R/P of 56%. P , ET , and R closed the long‐term water budget with a residual of 2% of precipitation. On the daily time scale, the residual of the water budget was larger than on the annual time scale, and explained to a moderate extent by θ ( R 2 = 0.40). Wavelet analysis revealed subweekly time scales, presumably dominated by unaccounted fast‐turnover storage terms such as interception, as a major source of uncertainty in water balance closure. At weekly resolution, soil water content explained more than half ( R 2 = 0.62) of the residual. By means of combined empirical orthogonal function and cluster analysis, two slightly different spatial patterns of θ could be identified that were associated with mean θ values below and above 0.35 cm 3 /cm 3 , respectively. The timing of these patterns as well as the varying coherence between PET , ET , and soil water content responded to changes in water availability, including a moderate response to the European drought in spring 2011.
+Keywords: Evapotranspiration, Environmental science, Surface runoff, Hydrology (agriculture), Soil water, Water content, Precipitation, Water balance, Drainage basin, Eddy covariance, Tributary, Energy budget, Interception, Soil science, Geography, Geology, Ecosystem, Meteorology, Ecology
+Topics: Hydrology and Watershed Management Studies, Plant Water Relations and Carbon Dynamics, Soil Moisture and Remote Sensing
+Concepts: Evapotranspiration, Environmental science, Surface runoff, Hydrology (agriculture), Soil water, Water content, Precipitation, Water balance, Drainage basin, Eddy covariance, Tributary, Energy budget, Interception, Soil science, Geography, Geology, Ecosystem, Meteorology, Ecology, Cartography, Geotechnical engineering, Biology
+
+Label: WSN, Data collection
+Note:
+
+
+
+
+
+------------------------------------------------------------
+25. Data Reduction in Wireless Sensor Networks: A Hierarchical LMS Prediction Approach
+Query: WSN + Energy Budget (10)
+Year: 2015  |  DOI: https://doi.org/10.1109/jsen.2015.2504106  |  Venue: None
+Authors: Liansheng Tan, Mou Wu
+Abstract:
+In wireless sensor networks (WSNs), due to the restriction of scarce energy, it remains an open challenge how to schedule the data communications between the sensor nodes and the sink to reduce power usage with the aim of maximizing the network lifetime. To face this challenge, this paper proposes a workable data communication scheme utilizing the hierarchical Least-Mean-Square (HLMS) adaptive filter. The HLMS predicting techniques are explored that predict the measured values both at the source and at the sink, sensor nodes are subsequently required only to send those readings that deviate from the prediction by an error budget. Such data reduction strategy achieves significant power savings by reducing the amount of data sent by each node. We discuss the working mechanism of HLMS in the purpose of data reduction in WSNs, analyze the mean-squared error in the two level HLMS, and design the interactive HLMS prediction algorithm implemented at sink and sensor node and the transmission protocol between them. To elaborate on our theoretical proposal, the HLMS algorithms and protocols are then evaluated by simulation. Simulation results show that our proposed scheme achieves major improvement in convergence speed compared with previous approaches, and achieves up to 95% communication reduction for the temperature measurements acquired at Intel Berkeley lab while maintaining a minimal accuracy of 0.3 °C.
+Keywords: Wireless sensor network, Computer science, Sink (geography), Mean squared error, Data transmission, Wireless, Real-time computing, Computer network, Telecommunications, Mathematics, Statistics
+Topics: Energy Efficient Wireless Sensor Networks, Advanced Adaptive Filtering Techniques, Energy Harvesting in Wireless Networks
+Concepts: Wireless sensor network, Computer science, Sink (geography), Mean squared error, Data transmission, Wireless, Real-time computing, Computer network, Telecommunications, Mathematics, Statistics, Cartography, Geography
+
+Label: WSN, energy budget, data collection, 
+Note:
+
+
+
+
+
+------------------------------------------------------------
+26. Mobility-aware charger deployment for wireless rechargeable sensor networks
+Query: WSN + Energy Budget (10)
+Year: 2012  |  DOI: https://doi.org/10.1109/apnoms.2012.6356102  |  Venue: None
+Authors: Te-Chuan Chiu, Yuan‐Yao Shih, Ai‐Chun Pang, Jeu‐Yih Jeng, Pi-Cheng Hsiu
+Abstract:
+Wireless charging technology is considered as one of the promising solutions to solve the energy limitation problem for large-scale wireless sensor networks. Obviously, charger deployment is a critical issue since the number of chargers would be limited by the network construction budget, which makes the full-coverage deployment of chargers infeasible. In many of the applications targeted by large-scale wireless sensor networks, end-devices are usually equipped by the human and their movement follows some degree of regularity. Therefore in this paper, we utilize this property to deploy chargers with partial coverage, with an objective to maximize the survival rate of end-devices. We prove this problem is NP-hard, and propose an algorithm to tackle it. The simulation results show that our proposed algorithm can significantly increase the survival rate of end-devices. To our knowledge, this is one of very first works that consider charger deployment with partial coverage in wireless rechargeable sensor networks.
+Keywords: Software deployment, Wireless sensor network, Computer science, Wireless, Key distribution in wireless sensor networks, Computer network, Wireless network, Telecommunications
+Topics: Energy Harvesting in Wireless Networks, Wireless Power Transfer Systems, Advanced MIMO Systems Optimization
+Concepts: Software deployment, Wireless sensor network, Computer science, Wireless, Key distribution in wireless sensor networks, Computer network, Wireless network, Telecommunications, Operating system
+
+Label: WSN, energy budget, deployment
+Note:
+
+
+
+
+
+
+
+------------------------------------------------------------
+27. Energy aware adaptive sampling algorithm for energy harvesting wireless sensor networks
+Query: WSN + Energy Budget (10)
+Year: 2015  |  DOI: https://doi.org/10.1109/sas.2015.7133582  |  Venue: None
+Authors: Bruno Srbinovski, Michele Magno, Brendan O’Flynn, Vikram Pakrashi, Emanuel Popovici
+Abstract:
+Wireless sensor nodes have a limited power budget, while they are often expected to be functional for a very long period of time once deployed in the field. Therefore, the minimization of energy consumption and energy harvesting technology are key tools for maximization of network lifetime and achieving self sustainability in Wireless Sensor Networks (WSN). This paper proposes an energy aware Adaptive Sampling Algorithm (ASA) for WSN with power hungry sensors and harvesting capabilities. An existing ASA developed for wireless sensor networks with power hungry sensors is optimized and enhanced to adapt the sampling frequency according to the available energy of the node. The proposed algorithm is evaluated using an in-field testbed with a sensor node which incorporates a wind harvester and a power hungry wind speed/direction sensor. Simulation and comparison between an existing ASA and the energy aware ASA in terms of energy durability are carried out using the measured wind energy and the wind speed over a period of a month. The simulation results have shown that using ASA in combination with energy aware function on the nodes can drastically increase the lifetime of a WSN node. Moreover, the energy aware ASA in conjunction with the node energy harvesting capability can lead towards a perpetual operation of WSN and significantly outperform state-of-the-art ASA.
+Keywords: Wireless sensor network, Testbed, Energy harvesting, Computer science, Key distribution in wireless sensor networks, Energy consumption, Energy (signal processing), Sensor node, Node (physics), Wireless, Real-time computing, Adaptive sampling, Computer network, Wireless network, Electrical engineering, Engineering, Telecommunications
+Topics: Energy Harvesting in Wireless Networks, Energy Efficient Wireless Sensor Networks, Indoor and Outdoor Localization Technologies
+Concepts: Wireless sensor network, Testbed, Energy harvesting, Computer science, Key distribution in wireless sensor networks, Energy consumption, Energy (signal processing), Sensor node, Node (physics), Wireless, Real-time computing, Adaptive sampling, Computer network, Wireless network, Electrical engineering, Engineering, Telecommunications, Structural engineering, Mathematics, Statistics, Monte Carlo method
+
+Label: WSN, energy budget, duty-cycle
+Note:
+
+
+
+
+
+------------------------------------------------------------
+28. Stochastic Sensor Scheduling for Energy Constrained Estimation in Multi-Hop Wireless Sensor Networks
+Query: WSN + Energy Budget (10)
+Year: 2011  |  DOI: https://doi.org/10.1109/tac.2011.2164022  |  Venue: None
+Authors: Yilin Mo, Emanuele Garone, Alessandro Casavola, Bruno Sinopoli
+Abstract:
+Wireless Sensor Networks (WSNs) enable a wealth of new applications where\nremote estimation is essential. Individual sensors simultaneously sense a\ndynamic process and transmit measured information over a shared channel to a\ncentral fusion center. The fusion center computes an estimate of the process\nstate by means of a Kalman filter. In this paper we assume that the WSN admits\na tree topology with fusion center at the root. At each time step only a subset\nof sensors can be selected to transmit observations to the fusion center due to\na limited energy budget. We propose a stochastic sensor selection algorithm\nthat randomly selects a subset of sensors according to certain probability\ndistribution, which is opportunely designed to minimize the asymptotic expected\nestimation error covariance matrix. We show that the optimal stochastic sensor\nselection problem can be relaxed into a convex optimization problem and thus\nsolved efficiently. We also provide a possible implementation of our algorithm\nwhich does not introduce any communication overhead. The paper ends with some\nnumerical examples that show the effectiveness of the proposed approach.\n
+Keywords: Fusion center, Wireless sensor network, Computer science, Kalman filter, Scheduling (production processes), Mathematical optimization, Sensor fusion, Real-time computing, Wireless, Computer network, Mathematics, Telecommunications, Artificial intelligence
+Topics: Distributed Sensor Networks and Detection Algorithms, Target Tracking and Data Fusion in Sensor Networks, Energy Efficient Wireless Sensor Networks
+Concepts: Fusion center, Wireless sensor network, Computer science, Kalman filter, Scheduling (production processes), Mathematical optimization, Sensor fusion, Real-time computing, Wireless, Computer network, Mathematics, Telecommunications, Artificial intelligence, Cognitive radio
+
+Label: WSN, data collection, energy budget
+Note:
+
+
+
+
+
+
+
+------------------------------------------------------------
+29. An 86% Efficiency 12 µW Self-Sustaining PV Energy Harvesting System With Hysteresis Regulation and Time-Domain MPPT for IOT Smart Nodes
+Query: WSN + Energy Budget (10)
+Year: 2015  |  DOI: https://doi.org/10.1109/jssc.2015.2418712  |  Venue: None
+Authors: Xiaosen Liu, E. Sánchez‐Sinencio
+Abstract:
+This paper presents a fully-integrated μW-level photovoltaic (PV) self-sustaining energy harvesting system proposed for smart nodes of Internet of Things (IOT) networks. A hysteresis regulation is designed to provide a constant 3.3 V output voltage for a host of applications, including powering sensors, signal processors, and wireless transmitters. Due to the stringent power budget in IOT scenarios, the power consumption of the harvesting system is optimized by multiple system and circuit level techniques. Firstly, the hill-climbing MPPT mechanism reuses and processes the information of the hysteresis controller in the time-domain and is free of power hungry analog circuits. Secondly, the typical power-performance tradeoff of the hysteresis controller is solved by a self-triggered one-shot mechanism. Thus, the output regulation achieves high-performance and yet low-power operations. Thirdly, to execute the impedance tuning of MPPT, the capacitor value modulation (CVM) scheme is proposed instead of the conventional frequency modulation scheme, avoiding quiescent power consumption. Utilizing a commercial PV cell of 2.5 cm 2 , the proposed system provides 0-21 μW output power to the IOT smart nodes. Measured results showed that the PV harvesting system achieved both ultra-low power operation capability at 12 μW and a peak self-sustaining efficiency of 86%.
+Keywords: Energy harvesting, Photovoltaic system, Maximum power point tracking, Computer science, Controller (irrigation), Power (physics), Capacitor, Voltage, Electronic engineering, Control theory (sociology), Electrical engineering, Engineering, Control (management)
+Topics: Energy Harvesting in Wireless Networks, Innovative Energy Harvesting Technologies, Photovoltaic System Optimization Techniques
+Concepts: Energy harvesting, Photovoltaic system, Maximum power point tracking, Computer science, Controller (irrigation), Power (physics), Capacitor, Voltage, Electronic engineering, Control theory (sociology), Electrical engineering, Engineering, Control (management), Quantum mechanics, Inverter, Artificial intelligence, Agronomy, Physics, Biology
+
+Label: WSN, energy budget, energy harvesting
+Note:
+
+
+
+
+
+
+------------------------------------------------------------
+30. A 5.58nW 32.768kHz DLL-assisted XO for real-time clocks in wireless sensing applications
+Query: WSN + Energy Budget (10)
+Year: 2012  |  DOI: https://doi.org/10.1109/isscc.2012.6177043  |  Venue: None
+Authors: Dongmin Yoon, Dennis Sylvester, David Blaauw
+Abstract:
+There is a growing interest in ultra-low-power wireless microsystems [1]. Synchronization between different nodes in a wireless sensor network plays an important role in the overall node energy budget due to the high power demand of wireless communication. One synchronization approach is to employ a realtime clock (RTC) on each node, with nodes awakening periodically to communicate and re-synchronize. With recent work on ultra-low-power microsystems demonstrating average power consumption of several nW [2], there is a need for ultra-low-power timers that can synchronize communication events and serve as frequency references for radios.
+Keywords: Synchronization (alternating current), Wireless, Computer science, Wireless sensor network, Node (physics), Microsystem, Clock synchronization, Computer network, Key distribution in wireless sensor networks, Power (physics), Wireless network, Energy consumption, Wi-Fi array, Embedded system, Real-time computing, Telecommunications, Electrical engineering, Engineering
+Topics: Analog and Mixed-Signal Circuit Design, Advancements in PLL and VCO Technologies, Low-power high-performance VLSI design
+Concepts: Synchronization (alternating current), Wireless, Computer science, Wireless sensor network, Node (physics), Microsystem, Clock synchronization, Computer network, Key distribution in wireless sensor networks, Power (physics), Wireless network, Energy consumption, Wi-Fi array, Embedded system, Real-time computing, Telecommunications, Electrical engineering, Engineering, Quantum mechanics, Channel (broadcasting), Nanotechnology, Physics, Materials science, Structural engineering
+
+Label: estimating clock skew, WSN, energy budget
+Note:
+
+
+
+
+
+
+
