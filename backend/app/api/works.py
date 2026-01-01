@@ -13,7 +13,12 @@ def get_client():
 @router.post("/search", response_model=WorksSearchResponse)
 def search_works(payload: WorksSearchRequest, client: OpenAlexClient = Depends(get_client)):
     try:
-        return run_search(payload, client)
+        response = run_search(payload, client, discovery_mode = False)
+        results = response.results
+        if len(results)>20:
+            return WorksSearchResponse(results=results[:20])
+        else:
+            return response
     except OpenAlexError as exc:
         raise HTTPException(status_code=502, detail=str(exc))
 

@@ -7,3 +7,4 @@ uvicorn
 sentence_transformers
 pytest
 httpx
+keybert

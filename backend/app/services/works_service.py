@@ -2,18 +2,45 @@
 from ...data.fetch import search_from_lists
 from ...data.client import OpenAlexClient
 from ..schemas import WorksSearchRequest, WorksSearchResponse, WorkSummary
+from functools import lru_cache
+from ..cache import get_cache_dir
+from keybert import KeyBERT
+from typing import List
+from .semantic_rerank_service import get_sentence_transformer
 
 SELECT_FIELDS = "id,display_name,concepts,abstract_inverted_index,publication_year,authorships"
 
-def run_search(payload: WorksSearchRequest, client: OpenAlexClient) -> WorksSearchResponse:
-    results = search_from_lists(
-        client,
-        keywords=payload.keywords,
-        abstracts=payload.abstracts,
-        start_date=payload.start_date,
-        end_date=payload.end_date,
-        select_fields=SELECT_FIELDS,
-    )
+def extract_keywords_from_text(text: str, top_n: int = 5) -> List[str]:
+    kw_model = KeyBERT(model=get_sentence_transformer())
+    keywords = kw_model.extract_keywords(text, top_n=top_n)
+    return [k[0] for k in keywords]
+
+def run_search(payload: WorksSearchRequest, client: OpenAlexClient, discovery_mode: bool = True) -> WorksSearchResponse:
+    
+    abstract_keywords = []
+    if discovery_mode:
+        if payload.abstracts:
+            for abstract_text in payload.abstracts:
+                extracted = extract_keywords_from_text(abstract_text)
+                print(f"\nKeywords extracted via KeyBERT: {extracted}\n")
+                abstract_keywords.extend(extracted)
+        results = search_from_lists(
+            client,
+            keywords=payload.keywords,
+            abstracts=abstract_keywords,
+            start_date=payload.start_date,
+            end_date=payload.end_date,
+            select_fields=SELECT_FIELDS,
+        )
+    else:
+        results = search_from_lists(
+            client,
+            keywords=payload.keywords,
+            abstracts=payload.abstracts,
+            start_date=payload.start_date,
+            end_date=payload.end_date,
+            select_fields=SELECT_FIELDS,
+        )
     summaries = []
     for r in results:
         summaries.append(
