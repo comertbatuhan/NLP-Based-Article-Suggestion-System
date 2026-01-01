@@ -1,10 +1,27 @@
-#backend/app/main.py
+# backend/app/main.py
+from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from .api.routes import router as api_router
 from .cache import cleanup_cache_dir, get_cache_dir
 
-app = FastAPI(title="Research Finder API", version="0.1.0")
+# Define the lifespan context manager to handle startup and shutdown
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    # --- Startup Logic ---
+    get_cache_dir()
+    
+    yield  # The application runs here
+    
+    # --- Shutdown Logic ---
+    cleanup_cache_dir()
+
+# Pass the lifespan handler to the FastAPI app
+app = FastAPI(
+    title="Research Finder API", 
+    version="0.1.0",
+    lifespan=lifespan
+)
 
 app.add_middleware(
     CORSMiddleware,
@@ -20,17 +37,6 @@ app.add_middleware(
 )
 
 app.include_router(api_router, prefix="/api")
-
-# Ensure cache directory exists on startup
-@app.on_event("startup")
-def _init_cache_dir():
-    get_cache_dir()
-
-
-# Clean up Hugging Face cache when the server stops
-@app.on_event("shutdown")
-def _cleanup_cache():
-    cleanup_cache_dir()
 
 @app.get("/health")
 def health():

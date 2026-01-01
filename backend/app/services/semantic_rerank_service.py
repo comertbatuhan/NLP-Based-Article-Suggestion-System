@@ -21,18 +21,25 @@ def get_cross_encoder():
 def build_search_space_representation(workList: WorksSearchResponse) -> Dict:
     search_space ={}
     for work in workList.results:
-        keywords = work.keywords.strip().lower() 
-        abstract = work.abstract.strip().lower()
-        search_space[work.id] = keywords + " " + abstract
+        keywords = (work.keywords or "").strip().lower()
+        abstract = (work.abstract or "").strip().lower()
+        search_space[work.id] = f"{keywords} {abstract}".strip()
     return search_space
 
 
 def build_query_space_representation(searchRequest: WorksSearchRequest) -> List[str]:
     query_space = []
-    keywords = " ".join(k.strip().lower() for k in searchRequest.keywords)
-    if searchRequest.abstracts:
-        for abstract in searchRequest.abstracts:
-            query_space.append(keywords + " " + abstract.strip().lower())
+    
+    req_keywords = searchRequest.keywords or []
+    keywords = " ".join((k or "").strip().lower() for k in req_keywords)
+
+    req_abstracts = searchRequest.abstracts or []
+
+    if req_abstracts:
+        for abstract in req_abstracts:
+            safe_abstract = (abstract or "").strip().lower()
+            query_space.append(f"{keywords} {safe_abstract}".strip())
+
     if not query_space and keywords:
         query_space.append(keywords)
 
@@ -43,6 +50,9 @@ def rerank_works_by_query_sentence_transformer(searchRequest: WorksSearchRequest
 
     search_space = build_search_space_representation(workList) #Dict
     query_space = build_query_space_representation(searchRequest) #List[str]
+
+    if not search_space or not query_space:
+        return workList
 
     model = get_sentence_transformer()
     query_emb = model.encode(query_space, convert_to_tensor=True) #dim: abstract_num x embed_dim
@@ -61,9 +71,9 @@ def rerank_works_by_query_sentence_transformer(searchRequest: WorksSearchRequest
         for work_id, _ in scored_works 
         if work_id in work_lookup
     ]
-
     return WorksSearchResponse(results=sorted_results)
-
+    
+    
 def rerank_works_by_query_cross_encoder(searchRequest: WorksSearchRequest, workList: WorksSearchResponse) -> WorksSearchResponse:
     model = get_cross_encoder()
 
@@ -99,5 +109,4 @@ def rerank_works_by_query_cross_encoder(searchRequest: WorksSearchRequest, workL
         for work_id, _ in scored_works 
         if work_id in work_lookup
     ]
-
     return WorksSearchResponse(results=sorted_results)
