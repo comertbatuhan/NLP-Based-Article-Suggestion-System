@@ -58,5 +58,29 @@ As this is an ongoing academic project, the following modules are currently in d
 
 ---
 
-## 💻 Usage (Development)
+## 💻 Quick Start
+
+**Backend:**
+```bash
+cd backend
+pip install -r requirements.txt
+uvicorn app.main:app --reload
+```
+
+**Frontend:**
+```bash
+cd frontend
+python3 -m http.server 3000
+```
+
+Then open `http://localhost:3000` in your browser.
+
+## Frontend Features
+
+- Interactive search form with keyword and abstract inputs
+- Side-by-side comparison of three ranking methods
+- Expandable result cards showing full abstracts
+- Voting system to track user preferences
+- Real-time bar chart visualization of votes
+
 
