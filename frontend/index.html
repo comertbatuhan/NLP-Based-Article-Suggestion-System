@@ -1,13 +1,542 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Research Paper Finder</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Finder</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        h1 {
+            color: #667eea;
+            margin-bottom: 30px;
+            text-align: center;
+            font-size: 2em;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 6px;
+            font-size: 14px;
+            transition: border-color 0.3s;
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        .date-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 14px 28px;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .tabs {
+            display: flex;
+            gap: 10px;
+            margin: 30px 0 20px 0;
+            border-bottom: 2px solid #e0e0e0;
+        }
+
+        .tab {
+            padding: 12px 24px;
+            cursor: pointer;
+            border: none;
+            background: transparent;
+            color: #666;
+            font-weight: 600;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s;
+            width: auto;
+            margin: 0;
+        }
+
+        .tab:hover {
+            color: #667eea;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .tab.active {
+            color: #667eea;
+            border-bottom-color: #667eea;
+        }
+
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.3s;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .result-card {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            border-left: 4px solid #667eea;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .result-card:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transform: translateX(5px);
+        }
+
+        .result-card.expanded {
+            background: white;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+        }
+
+        .result-title {
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 8px;
+            font-size: 1.1em;
+        }
+
+        .result-year {
+            color: #667eea;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .result-keywords {
+            color: #666;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+
+        .result-abstract {
+            color: #555;
+            line-height: 1.6;
+            margin-top: 10px;
+            display: none;
+        }
+
+        .result-card.expanded .result-abstract {
+            display: block;
+        }
+
+        .vote-section {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 2px solid #e0e0e0;
+            text-align: center;
+        }
+
+        .vote-buttons {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 15px;
+        }
+
+        .vote-btn {
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-size: 14px;
+            width: auto;
+        }
+
+        .vote-btn.openalex {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+
+        .vote-btn.sentence {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        }
+
+        .vote-btn.cross {
+            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+        }
+
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #666;
+        }
+
+        .spinner {
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #667eea;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 15px auto;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .error {
+            background: #fee;
+            color: #c33;
+            padding: 15px;
+            border-radius: 6px;
+            border-left: 4px solid #c33;
+            margin: 20px 0;
+        }
+
+        .empty {
+            text-align: center;
+            padding: 40px;
+            color: #999;
+            font-style: italic;
+        }
+
+        .chart-container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .helper-text {
+            font-size: 0.85em;
+            color: #999;
+            margin-top: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Research Finder</h1>
+        
+        <form id="searchForm">
+            <div class="form-group">
+                <label for="keywords">Keywords *</label>
+                <textarea id="keywords" placeholder="Enter keywords separated by commas (e.g., machine learning, neural networks)" required></textarea>
+                <div class="helper-text">Required: At least one keyword</div>
+            </div>
+
+            <div class="form-group">
+                <label for="abstracts">Abstracts</label>
+                <textarea id="abstracts" placeholder="Optional: Enter abstract texts separated by new lines"></textarea>
+                <div class="helper-text">Optional: One abstract per line</div>
+            </div>
+
+            <div class="date-row">
+                <div class="form-group">
+                    <label for="startDate">Start Date</label>
+                    <input type="date" id="startDate">
+                </div>
+                <div class="form-group">
+                    <label for="endDate">End Date</label>
+                    <input type="date" id="endDate">
+                </div>
+            </div>
+
+            <button type="submit" id="submitBtn">Search & Compare</button>
+        </form>
+
+        <div id="resultsSection" style="display: none;">
+            <div class="tabs">
+                <button class="tab active" data-tab="openalex">OpenAlex Search</button>
+                <button class="tab" data-tab="sentence">Sentence Transformer</button>
+                <button class="tab" data-tab="cross">Cross Encoder</button>
+                <button class="tab" data-tab="votes">Vote Results</button>
+            </div>
+
+            <div id="openalex" class="tab-content active"></div>
+            <div id="sentence" class="tab-content"></div>
+            <div id="cross" class="tab-content"></div>
+            <div id="votes" class="tab-content">
+                <div class="chart-container">
+                    <canvas id="votesChart"></canvas>
+                </div>
+            </div>
+
+            <div class="vote-section">
+                <h3>Which results were most relevant?</h3>
+                <div class="vote-buttons">
+                    <button class="vote-btn openalex" onclick="vote('openalex')">Vote: OpenAlex</button>
+                    <button class="vote-btn sentence" onclick="vote('sentence')">Vote: Sentence Transformer</button>
+                    <button class="vote-btn cross" onclick="vote('cross')">Vote: Cross Encoder</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <script>
+        const API_BASE = 'http://localhost:8000/api';
+        let chartInstance = null;
+
+        function getVotes() {
+            const stored = localStorage.getItem('researchVotes');
+            return stored ? JSON.parse(stored) : { openalex: 0, sentence: 0, cross: 0 };
+        }
+
+        function saveVotes(votes) {
+            localStorage.setItem('researchVotes', JSON.stringify(votes));
+        }
+
+        function vote(type) {
+            const votes = getVotes();
+            votes[type]++;
+            saveVotes(votes);
+            updateChart();
+            alert(`Vote recorded for ${type === 'openalex' ? 'OpenAlex' : type === 'sentence' ? 'Sentence Transformer' : 'Cross Encoder'}!`);
+        }
+
+        function updateChart() {
+            const votes = getVotes();
+            const ctx = document.getElementById('votesChart');
+            
+            if (chartInstance) {
+                chartInstance.destroy();
+            }
+
+            chartInstance = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['OpenAlex Search', 'Sentence Transformer', 'Cross Encoder'],
+                    datasets: [{
+                        label: 'Votes',
+                        data: [votes.openalex, votes.sentence, votes.cross],
+                        backgroundColor: [
+                            'rgba(240, 147, 251, 0.8)',
+                            'rgba(79, 172, 254, 0.8)',
+                            'rgba(67, 233, 123, 0.8)'
+                        ],
+                        borderColor: [
+                            'rgba(240, 147, 251, 1)',
+                            'rgba(79, 172, 254, 1)',
+                            'rgba(67, 233, 123, 1)'
+                        ],
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: true,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            ticks: {
+                                stepSize: 1
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        title: {
+                            display: true,
+                            text: 'User Preference Votes',
+                            font: {
+                                size: 18
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        function parseKeywords(text) {
+            return text.split(',').map(k => k.trim()).filter(k => k);
+        }
+
+        function parseAbstracts(text) {
+            if (!text.trim()) return [];
+            return text.split('\n').map(a => a.trim()).filter(a => a);
+        }
+
+        function renderResults(data, containerId) {
+            const container = document.getElementById(containerId);
+            
+            if (!data.results || data.results.length === 0) {
+                container.innerHTML = '<div class="empty">No results found</div>';
+                return;
+            }
+
+            container.innerHTML = data.results.map((work, idx) => `
+                <div class="result-card" onclick="toggleExpand(this)">
+                    <div class="result-title">${work.title || 'Untitled'}</div>
+                    ${work.publication_year ? `<div class="result-year">Year: ${work.publication_year}</div>` : ''}
+                    ${work.keywords ? `<div class="result-keywords"><strong>Keywords:</strong> ${work.keywords}</div>` : ''}
+                    <div class="result-abstract">${work.abstract || 'No abstract available'}</div>
+                </div>
+            `).join('');
+        }
+
+        function toggleExpand(card) {
+            card.classList.toggle('expanded');
+        }
+
+        function showLoading(containerId) {
+            document.getElementById(containerId).innerHTML = `
+                <div class="loading">
+                    <div class="spinner"></div>
+                    <div>Loading results...</div>
+                </div>
+            `;
+        }
+
+        function showError(containerId, message) {
+            document.getElementById(containerId).innerHTML = `
+                <div class="error">Error: ${message}</div>
+            `;
+        }
+
+        async function fetchResults(endpoint, payload) {
+            const response = await fetch(`${API_BASE}${endpoint}`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            });
+
+            if (!response.ok) {
+                throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+            }
+
+            return await response.json();
+        }
+
+        document.getElementById('searchForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const keywords = parseKeywords(document.getElementById('keywords').value);
+            const abstracts = parseAbstracts(document.getElementById('abstracts').value);
+            const startDate = document.getElementById('startDate').value || null;
+            const endDate = document.getElementById('endDate').value || null;
+
+            if (keywords.length === 0) {
+                alert('Please enter at least one keyword');
+                return;
+            }
+
+            const payload = {
+                keywords,
+                abstracts: abstracts.length > 0 ? abstracts : null,
+                start_date: startDate,
+                end_date: endDate
+            };
+
+            document.getElementById('submitBtn').disabled = true;
+            document.getElementById('resultsSection').style.display = 'block';
+
+            document.querySelectorAll('.tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            document.querySelector('.tab[data-tab="openalex"]').classList.add('active');
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            document.getElementById('openalex').classList.add('active');
+
+            showLoading('openalex');
+            showLoading('sentence');
+            showLoading('cross');
+
+            try {
+                const [openalexData, sentenceData, crossData] = await Promise.all([
+                    fetchResults('/works/search', payload),
+                    fetchResults('/works/rerank_search_sentence_transformer', payload),
+                    fetchResults('/works/rerank_search_cross_encoder', payload)
+                ]);
+
+                renderResults(openalexData, 'openalex');
+                renderResults(sentenceData, 'sentence');
+                renderResults(crossData, 'cross');
+                updateChart();
+            } catch (error) {
+                showError('openalex', error.message);
+                showError('sentence', error.message);
+                showError('cross', error.message);
+            } finally {
+                document.getElementById('submitBtn').disabled = false;
+            }
+        });
+
+        document.querySelectorAll('.tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+                document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+                
+                tab.classList.add('active');
+                document.getElementById(tab.dataset.tab).classList.add('active');
+            });
+        });
+
+        updateChart();
+    </script>
+</body>
 </html>
 

@@ -77,17 +77,31 @@ def rerank_works_by_query_sentence_transformer(searchRequest: WorksSearchRequest
 def rerank_works_by_query_cross_encoder(searchRequest: WorksSearchRequest, workList: WorksSearchResponse) -> WorksSearchResponse:
     model = get_cross_encoder()
 
-    query_str = " ".join(k.strip().lower() for k in searchRequest.keywords)
-    if searchRequest.abstracts:
-        query_pairs = [query_str + " " + abstract.strip().lower() for abstract in searchRequest.abstracts]
+    keywords = searchRequest.keywords or []
+    query_str = " ".join(
+        (k or "").strip().lower()
+        for k in keywords
+        if (k or "").strip()
+    ).strip()
+
+    abstracts = searchRequest.abstracts or []
+    if abstracts:
+        query_pairs = [
+            f"{query_str} {(abstract or '').strip().lower()}".strip()
+            for abstract in abstracts
+            if (abstract or "").strip() or query_str
+        ]
     else:
-        query_pairs = [query_str]
+        query_pairs = [query_str] if query_str else []
     len_query_pairs = len(query_pairs)
     ranking_pairs = []
     work_ids_ordered = []
 
+    if not query_pairs:
+        return workList
+
     for work in workList.results:
-        doc_text = f"{work.title} {work.abstract}".strip()
+        doc_text = f"{work.title or ''} {work.abstract or ''}".strip()
         for query in query_pairs:
             ranking_pairs.append([query, doc_text])
         work_ids_ordered.append(work.id)
