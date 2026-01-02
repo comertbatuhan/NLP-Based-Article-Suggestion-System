@@ -50,7 +50,6 @@ def run_search(payload: WorksSearchRequest, client: OpenAlexClient, discovery_mo
                 keywords=_concepts_to_keywords(r.get("concepts", [])),
                 abstract=_inverted_index_to_abstract(r.get("abstract_inverted_index")),
                 publication_year=r.get("publication_year"),
-                authorships=r.get("authorships", []),
             )
         )
     return WorksSearchResponse(results=summaries)
