@@ -3,18 +3,14 @@ from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from .api.routes import router as api_router
-from .cache import cleanup_cache_dir, get_cache_dir
+from .cache import get_model_cache_dir, get_temp_dir, cleanup_temp_dir
 
-# Define the lifespan context manager to handle startup and shutdown
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    # --- Startup Logic ---
-    get_cache_dir()
-    
-    yield  # The application runs here
-    
-    # --- Shutdown Logic ---
-    cleanup_cache_dir()
+    get_model_cache_dir()
+    get_temp_dir()
+    yield
+    cleanup_temp_dir()
 
 # Pass the lifespan handler to the FastAPI app
 app = FastAPI(

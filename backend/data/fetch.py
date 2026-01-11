@@ -4,6 +4,7 @@ from __future__ import annotations
 import re
 import unicodedata
 from typing import Dict, Iterable, List, Optional
+from itertools import combinations
 
 from .client import OpenAlexClient
 
@@ -22,11 +23,9 @@ def _sanitize_term(s: str) -> str:
 
     return cleaned
 
-
 def _quote(s: str) -> str:
     s = _sanitize_term(s).replace('"', r"\"")
     return f"\"{s}\"" if s else ""
-
 
 def _or_join(terms: Optional[List[str]]) -> Optional[str]:
     if not terms:
@@ -34,6 +33,38 @@ def _or_join(terms: Optional[List[str]]) -> Optional[str]:
     parts = [_quote(t) for t in (t.strip() for t in terms) if t and t.strip()]
     return " OR ".join(parts) if parts else None
 
+def _combinatorial_join(terms: Optional[List[str]], min_match_count: int = 1) -> Optional[str]:
+    """
+    min_match_count: Determines the minimum number of words that must intersect. 
+    Example: If there are 4 keywords, min_match_count=3 -> OR combinations of 4 and 3 keywords. 
+    """
+    if not terms:
+        return None
+    
+    clean_terms = [t.strip() for t in terms if t and t.strip()]
+    
+    if not clean_terms:
+        return None
+
+    if len(clean_terms) == 1:
+        return _quote(clean_terms[0])
+
+    combined_parts = []
+
+    r = max(2, min_match_count)
+
+    for combo in combinations(clean_terms, r):
+        quoted_combo = [_quote(t) for t in combo]
+        group_str = f"({' AND '.join(quoted_combo)})"
+        combined_parts.append(group_str)
+
+    # If min_match_count is 1 (we are in "bring whatever you find" mode),
+    # we must also add single words to the list (simple OR logic).        
+    if min_match_count == 1:
+        for term in clean_terms:
+            combined_parts.append(_quote(term))
+    
+    return " OR ".join(combined_parts)
 
 def build_filter(
     *,
@@ -42,22 +73,23 @@ def build_filter(
     start_date: Optional[str] = None,       # YYYY-MM-DD
     end_date: Optional[str] = None,         # YYYY-MM-DD
     work_types: Optional[List[str]] = None,
+    min_match_count: int = 1,
 ) -> str:
     """
-    Compose an OpenAlex filter string by AND independent filters with commas.
-    Terms inside each fielded search are OR.
+    Compose an OpenAlex filter string.
+    Keywords use combinatorial AND logic joined by OR.  
     """
     filters: List[str] = []
 
-    kw_or = _or_join(keywords)
-    if kw_or:
+    kw_query = _combinatorial_join(keywords, min_match_count=min_match_count)
+    if kw_query:
         field = "title_and_abstract.search"
-        filters.append(f"{field}:({kw_or})")
+        filters.append(f"{field}:{kw_query}")
 
-    abs_or = _or_join(abstracts)
-    if abs_or:
+    abs_query = _combinatorial_join(abstracts)
+    if abs_query:
         field = "abstract.search"
-        filters.append(f"{field}:({abs_or})")
+        filters.append(f"{field}:({abs_query})")
 
     if start_date:
         filters.append(f"from_publication_date:{start_date}")
@@ -140,7 +172,8 @@ def search_from_lists(
     sort: str = "relevance_score:desc",
     max_pages: int = 1,
     select_fields: Optional[str] = None,
-    work_types: List[str] = ["article", "preprint"]
+    work_types: List[str] = ["article", "preprint"],
+    min_match_count: int = 1,
 ) -> Iterable[Dict]:
     """
     Build a fielded-search filter from lists, then stream results.
@@ -151,6 +184,7 @@ def search_from_lists(
         start_date=start_date,
         end_date=end_date,
         work_types=work_types,
+        min_match_count=min_match_count,
     )
     yield from iterate_works(
         client,
