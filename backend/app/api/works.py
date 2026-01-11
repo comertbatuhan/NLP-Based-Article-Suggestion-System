@@ -23,17 +23,23 @@ def search_works(payload: WorksSearchRequest, client: OpenAlexClient = Depends(g
         raise HTTPException(status_code=502, detail=str(exc))
 
 @router.post("/rerank_search_sentence_transformer", response_model=WorksSearchResponse)
-def search_and_rerank(payload: WorksSearchRequest, client: OpenAlexClient = Depends(get_client)):
+def search_and_rerank_bi_encoder(payload: WorksSearchRequest, client: OpenAlexClient = Depends(get_client)):
     try:
         response = run_search(payload, client)
-        return rerank_works_by_query_sentence_transformer(searchRequest=payload, workList=response)
+        reranked_response = rerank_works_by_query_sentence_transformer(searchRequest=payload, workList=response)
+        if len(reranked_response.results) > 20:
+             return WorksSearchResponse(results=reranked_response.results[:20])
+        return reranked_response
     except OpenAlexError as exc:
         raise HTTPException(status_code=502, detail=str(exc))
     
 @router.post("/rerank_search_cross_encoder", response_model=WorksSearchResponse)
-def search_and_rerank(payload: WorksSearchRequest, client: OpenAlexClient = Depends(get_client)):
+def search_and_rerank_cross_encoder(payload: WorksSearchRequest, client: OpenAlexClient = Depends(get_client)):
     try:
         response = run_search(payload, client)
-        return rerank_works_by_query_cross_encoder(searchRequest=payload, workList=response)
+        reranked_response = rerank_works_by_query_cross_encoder(searchRequest=payload, workList=response)
+        if len(reranked_response.results) > 20:
+             return WorksSearchResponse(results=reranked_response.results[:20])
+        return reranked_response
     except OpenAlexError as exc:
         raise HTTPException(status_code=502, detail=str(exc))
