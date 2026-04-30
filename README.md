@@ -1,6 +1,6 @@
 # Semantic Search & Reranking Engine for Academic Literature
 
-![Status](https://img.shields.io/badge/Status-Ongoing-orange)
+![Status](https://img.shields.io/badge/Status-completed-orange)
 ![Context](https://img.shields.io/badge/Context-M.S._Graduation_Project-blue)
 ![University](https://img.shields.io/badge/University-Boğaziçi_University-purple)
 ![Python](https://img.shields.io/badge/Python-3.9%2B-yellow)
